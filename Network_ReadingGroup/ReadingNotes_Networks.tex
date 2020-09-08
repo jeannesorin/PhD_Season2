@@ -1,0 +1,131 @@
+\documentclass[10pt, final]{article}
+%\usepackage[document]{ragged2e}
+\usepackage[utf8]{inputenc}
+
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+ 
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Global Capitalism - Jeffry A. Frieden}
+\cfoot{\thepage}
+
+\usepackage{multirow}
+\usepackage{hyperref}
+
+\usepackage{soul}
+
+\usepackage{enumerate}
+\usepackage{amssymb}
+\usepackage{amsmath, mathtools}
+\usepackage{amsopn}
+\usepackage{amsthm}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{amsfonts}
+\usepackage[makeroom]{cancel}
+% \usepackage{wasysym}
+\usepackage[paperwidth=8.5in,left=1in,right=1in,paperheight=11.0in,top=1in, bottom=1in]{geometry}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings}
+
+\usepackage{pgfplots}
+
+\pgfplotsset{compat = 1.15}
+%\pgfplotsset{scaled y ticks=false}
+\usetikzlibrary{positioning}
+\usepackage{mathtools}
+
+\usepackage{listings}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\detr}{det}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\Real}{Re}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\argmax}{argmax}
+\DeclareMathOperator{\vect}{vec}
+
+
+% Additional commands/shortcuts to make our life easier
+\newcommand{\bm}{\begin{bmatrix}}
+\newcommand{\fm}{\end{bmatrix}}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\D{\Delta}
+\def\d{\delta}
+\def\z{\zeta}
+\def\k{\kappa}
+\def\l{\lambda}
+\def\n{\nu}
+\def\e{\varepsilon}
+\def\r{\rho}
+\def\s{\sigma}
+\def\S{\Sigma}
+\def\t{\tau}
+\def\x{\xi}
+\def\w{\omega}
+\def\W{\Omega}
+\def\th{\theta}
+\def\p{\phi}
+\def\P{\Phi}
+\newcommand{\pa}{\mathcal \partial}
+\newcommand{\No}{\mathcal N}
+
+
+
+\title{Network Reading Group - Reading Notes \\ Fall 2020}
+\author{Jeanne Sorin}
+\date{\today}
+
+\begin{document}
+
+\newcommand{\hatxi}{\hat{\mathbf{x}}^i}
+\newcommand{\tildexi}{\tilde{\mathbf{x}}^i}
+
+\maketitle
+
+\section{Optimal Transport Networks in Spatial Equilibrium,
+Pablo D. Fajgelbaum and Edouard Schaal, 2019} 
+
+\subsection*{Abstract} % (fold)
+\label{sub:abstract}
+
+\textit{We study optimal transport networks in spatial equilibrium. We develop a framework consisting of a neoclassical trade model with labor mobility in which locations are arranged on a graph. Goods must be shipped through linked locations, and transport costs depend on con- gestion and on the infrastructure in each link, giving rise to an optimal transport problem in general equilibrium. The optimal transport network is the solution to a social planner’s problem of building infrastructure in each link. We provide conditions such that this problem is globally convex, guaranteeing its numerical tractability. We also study cases with increasing returns to transport technologies in which global convexity fails. We apply the framework to assess optimal investments and inefficiencies in the road networks of European countries.}
+
+\subsection*{Introduction} % (fold)
+\label{sub:introduction}
+
+\begin{itemize}
+	\item \textbf{Why matters}: Trade costs \textit{shape the spatial distributions of prices, real incomes and trade flows} and are therefore a key force in international trade and economic geography. It is important to endogenize them. Trade costs will come from congestion (friction).
+	\item \textbf{The approach}: solve a dual problem to determine both the optimal transportation network, and the allocation of production and consumption, and the gross trade flows across the graph.
+	\begin{itemize}
+		\item The planner's problem
+		\item The Decentralized problem
+	\end{itemize}
+	\item \textbf{Empirical Mapping}: \textit{The quantification relies on two steps. First, the model's fundamentals can be calibrated such that the solution to the planner's optimal allocation of consumption, production and gross flows matches spatially disaggregated data on economic activity given an observed transport network. This step is enabled by the fact that, given the transport network, the welfare theorems hold assuming Pigouvian taxes to correct congestion externalities. Second, assuming a specific technology to build infrastructure makes it possible to undertake counterfactuals involving the optimal network.}
+\end{itemize}
+
+
+% subsection introduction (end)
+% subsection abstract (end)
+
+% section optimal_transport_networks_in_spatial_equilibrium_\_pablo_d_fajgelbaum_and_edouard_schaal_\_2019 (end)
+
+\section{New Sec} % (fold)
+\label{sec:new_sec}
+\begin{itemize}
+	\item \textbf{Question}:
+	\item \textbf{Context}:
+	\item \textbf{Empirical Strategy}:
+	\item \textbf{Findings}:
+\end{itemize}
+% section new_sec (end)
+
+\end{document}
