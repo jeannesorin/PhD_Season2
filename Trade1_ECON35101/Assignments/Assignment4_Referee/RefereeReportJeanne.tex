@@ -1,0 +1,764 @@
+\documentclass[10pt, final]{article}
+%\usepackage[document]{ragged2e}
+\usepackage[utf8]{inputenc}
+
+\usepackage{fancyhdr}
+
+%\pagestyle{fancy}
+
+\fancyfoot[CO,RE]{\thepage}
+
+\usepackage{multirow}
+\usepackage{hyperref}
+
+
+\usepackage{soul}
+
+\usepackage{enumerate}
+\usepackage{amssymb}
+\usepackage{amsmath, mathtools}
+\usepackage{amsopn}
+\usepackage{amsthm}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{amsfonts}
+\usepackage[makeroom]{cancel}
+% \usepackage{wasysym}
+\usepackage[paperwidth=8.5in,left=1in,right=1in,paperheight=11.0in,top=1in, bottom=1in]{geometry}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings}
+
+\usepackage{pgfplots}
+
+\pgfplotsset{compat = 1.15}
+%\pgfplotsset{scaled y ticks=false}
+\usetikzlibrary{positioning}
+\usepackage{mathtools}
+
+\usepackage{listings}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\detr}{det}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\Real}{Re}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\argmax}{argmax}
+\DeclareMathOperator{\vect}{vec}
+
+
+% Additional commands/shortcuts to make our life easier
+\newcommand{\bm}{\begin{bmatrix}}
+\newcommand{\fm}{\end{bmatrix}}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\D{\Delta}
+\def\d{\delta}
+\def\z{\zeta}
+\def\k{\kappa}
+\def\l{\lambda}
+\def\n{\nu}
+\def\e{\varepsilon}
+\def\r{\rho}
+\def\s{\sigma}
+\def\S{\Sigma}
+\def\t{\tau}
+\def\x{\xi}
+\def\w{\omega}
+\def\W{\Omega}
+\def\th{\theta}
+\def\p{\phi}
+\def\P{\Phi}
+\newcommand{\pa}{\mathcal \partial}
+\newcommand{\No}{\mathcal N}
+\def\munderbar#1{\underline{\sbox\tw@{$#1$}\dp\tw@\z@\box\tw@}}
+
+ \linespread{1.15}
+
+\title{The Geography of Path Dependence \\Allen and Donaldson (2020, NBER WP) \\ Referee Report}
+\author{Jeanne Sorin}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newcommand{\hatxi}{\hat{\mathbf{x}}^i}
+\newcommand{\tildexi}{\tilde{\mathbf{x}}^i}
+
+
+\maketitle
+
+\textit{The Geography of Path Dependence} is an important paper, as it introduces a tractable dynamic economic geography model, an element so far missing in the economic literature of path dependence. It creates a framework to study the dynamics of economic geography and path dependence in a more systematic (theoretical) way.
+The authors derive analytical conditions under which an economy with an arbitrary number of locations may converge to different steady states depending on its initial conditions. They then estimate the model and run counterfactual simulations to study how shocks on fundamentals affect long term geographical distribution of population and welfare. 
+Their results suggest an ample role for path dependence in both long run geographical distribution of economic activity, and aggregate welfare levels.
+The theoretical framework appears to be flexible enough to have the potential to accommodate multiple types of shocks, even though it does not account for any purely spatial linkage.
+
+
+I see the theoretical model as the main contribution of this paper. In the vein of most economic geography models (see the canonical Fujita, Krugman and Venable, 1999), the model generates four new theoretical results by adding a couple of distinctive features.
+First, following macroeconomics' historical choice to study the convergence hypothesis, an overlapping generation structure (OLG) replaces the infinitely lived agents, which improves the tractability of the model's dynamics.
+Second, the main theoretical innovation is to model both contemporaneous and historical productivity and amenity spillovers. More precisely, productivity levels $A_{it}$ (utility $u_{it}$) are determined both by fundamentals $\Bar{A}_{it}$ ($\Bar{u}_{it}$) and contemporaneous and historical populations. $\alpha_1$ and $\alpha_2$ ($\beta_1$ and $\beta_2$) determine the strength of contemporaneous and historical net agglomeration forces on productivity (amenities).
+The authors do not take a stand on the microeconomic foundations of such spillovers, allowing their model to accommodate multiple microeconomic theories.
+%
+This complementarity between contemporaneous and historical spillovers directs the model's dynamics through optimizing agents' migration decisions. 
+As is standard in the literature, a static equilibrium exists and is unique if contemporaneous agglomeration forces $\alpha_1 + \beta_1$ are small enough. 
+%
+The paper innovates as the model's dynamic equilibrium(a) and steady-state(s) are governed by the net sum of contemporaneous and historical spillovers.
+%
+For large enough $\alpha_1 + \alpha_2$ and $\beta_1 + \beta_2$, shocks on fundamentals may lead to different steady states. The authors derive analytical bounds on welfare associated with each possible steady state. Thereby, they investigate the quantitative role of path dependence, and propose a first quantitative answer to Rauch 1993's famous question: ``\textit{does history matter only when it matters little?}''.
+\\
+
+
+However, as many pioneering theoretical works, it still lacks in empirical robustness.
+In particular, I believe the empirical estimation, and numerical simulation sections can be significantly improved. 
+First, the authors should acknowledge that the assumption of constant elasticity of distance on trade flows $\kappa$ (equivalent to constant trade costs) is unrealistic, and investigate potential workarounds. 
+Second, the instrumental variables (IV) strategy should be strengthened. 
+Third, the novelty of the model together with estimated parameters being so close to the boundary conditions, call for the presentation of simulation results for a larger range of parameters for robustness.
+%
+Fourth, the paper's treatment of productivity and amenity fundamentals needs to be improved.
+\\
+
+First, I believe that the assumption of fixed $\kappa$, the elasticity of trade flows with respect to distance, casts doubts on the validity of the estimates from Section 3 (and subsequently Section 4). 
+The authors argue that a constant $\kappa$ is \textit{``broadly consistent with the patterns in international trade data surveyed by Disdier and Head (2008)''}. However, Disdier and Head (2008)'s meta-study is about international, rather than intranational flows, and does not present evidence that this elasticity ($\hat{\theta}$ in the paper) is constant. Figure 3 indeed features a net increase in estimated distance effect post $1960$ (from $0.6$ to $1.1$ is almost a $100 \%$ increase). Using $1997$ data is therefore likely to overestimate $\kappa$ for earlier years. This is consistent with $\hat{\kappa} = -1.35$ being at the upper end (in absolute value) of other studies' estimates cited in the paper. 
+\\
+Alternatively, could a workaround be found in looking directly at iceberg trade costs $\tau_{ij}$, especially if the authors are to take $\sigma$ and $\theta$ as given as they currently do (see further discussion below)?
+From equation (6) to equation (25) they recover the following relationship: $ \kappa \ln dist_{ij} = (1 - \sigma) \ln \tau_{ij}$, where $\tau_{ij}$ are the bilateral iceberg trade costs. Given $\sigma$, I wonder if estimating $\kappa$ is even necessary. If it is, would data on $\tau_{ijt}$ allow to recover time-varying $\kappa_t$?
+A potential fallback solution could be to exploit changes in the price indices of different cities / regions over. The paper published by one of the authors on the Interstate Highway System (IHS) (Allen and Arkolakis, 2014) presents evidence that the IHS created changes in price indices across cities. This is both evidence that a constant $\kappa$ is misleading, and potential direction for relaxing this assumption.
+\\
+At the very least, the authors could discuss the bias potentially introduced by a constant $\hat{\kappa}$ estimated using 1997 data.
+Indeed, $\kappa_{1800} < \hat{\kappa}$ would lead to a downward bias of early $\hat{P}_{it}^{1-\sigma}$ and $\hat{\mathcal{P}}_{it}^{1-\sigma}$ (outward and inward market access). It could also interact with the bias introduced from estimating $\kappa$ using state-to-state data but working with observations $i$ at the subcounty level. It is unclear from the current version of the paper how large and consequential these biases could be.
+\\ 
+
+Second, the last of the three-step identification relies on an instrumental variables (IV) strategy, as is standard when estimating a simultaneous system of demand and supply equations. 
+While the exclusion restrictions seem to be quite standard in the literature, I believe that changes in technology allowing better adaptation to extreme temperatures in terms of residential amenities could also impact productivity.
+More importantly, the first stage Sanderson and Windmeijer (2016) F-Statistic of the instrument used to estimate amenity spillovers $\beta_1$ and $\beta_2$ is 7.4 (Table 3), suggesting potential finite-sample TSLS bias. While I understand that the F-Statistic threshold for multiple endogenous variables is lower than in the canonical case of a single endogenous variable, the justification given in footnote $29$ is not sufficient. Indeed, it is mentioned that the estimates from Limited Information Maximum Likelihood are larger in absolute value, but where are these estimates presented? Why does this address the weak IV threat? The authors should also explicitly display the range of Sanderson and Windmeijer (2016) F-Statistics in Table C.1. (after differentiating out the other instruments) rather than simply reporting the aggregate F-Statistic, as it makes it impossible to link the footnote mentioned above to the table.
+\\
+
+This leads me to my third point, still related to the identification strategy and the estimation. When estimating the parameters $\{\alpha_1, \alpha_2, \beta_1, \beta_2, \sigma, \theta\}$ the authors choose to exogenously set $\sigma = 9$ and $\theta = 4$ (relying on the literature) in order to precisely estimate $\{\alpha_1, \alpha_2, \beta_1, \beta_2\}$. However, should we expect $\sigma$ and $\theta$ to exactly map estimates from the literature, given that the model is different in a way that previous literature's parameters may have accounted for elements now captured by $\{\alpha_1, \alpha_2, \beta_1, \beta_2\}$? The dismissed $\sigma$, going from $0.268$ $(2.524)$ to $3.065$ $(4.986)$ raises concerns; similarly for $\theta = 0.620$ $(0.858)$ (see Tables 2 and 3).
+Besides, if the authors end up taking $\sigma$ and $\theta$ as given, could the identification procedure be simplified? For example, could the author recover $\tau_{ijt}$ from $dist_{ij}$?
+\\
+More generally, the estimated $\{\alpha_1, \alpha_2, \beta_1, \beta_2\}$ are so close to the boundary conditions for convergence (Figure 3), that I would like to see how sensitive the simulations in Section 4 are to small changes in the parameters. 
+\\
+Additionally, the estimand for $\alpha_2$ ranges from $0.040$ to $0.045$ and is not precisely estimated\footnote{Standard errors of $0.030$ and $0.033$ respectively.}, suggesting that while historical spillovers are important for residential amenities ($\beta_2 = 0.330$ $(0.179)$), they are not for productivity. Does this imply differentiated persistence for amenity- and productivity-related shocks? While I agree that shocks on productivity fundamentals $\bar{A}_{it}$ are easier to think of than shocks on residential amenity fundamentals $\bar{u}_{it}$, would swapping $\bar{u}_{i,1900}$ in Section 4 lead to very different conclusions because $\alpha_2 << \beta_2$?  
+\\
+
+My last major point is about the role of fundamentals, and the corresponding relationship between the theoretical section and the simulations. All theoretical propositions rely on fundamental productivity $\bar{A}_i$ and amenities $\bar_{u}_i$ being constant over time. However, the (non-constant) path of these fundamentals is estimated in Section 3 and used further in Section 4. Do the estimates in Section 3 support the assumption that fundamentals are constant or tend to stabilize? 
+Swapping $\bar{A}_{i,1900}$ in Section 4 would have a very different interpretation if $\bar{A}_{i,t} = \bar{A}_i, \forall t$ and could not be interpreted as a one-time historical shock.
+\\
+More generally, it is unclear whether the simulation exercise actually captures the full extent of a historical shock. I would expect $\bar{A}_{i,t+1}$ to be correlated with $\bar{A}_{i,t}$ (rather than simply $A_{it} = \bar{A}_{it} L_{it}^{\alpha_1} L_{it-1}^{\alpha_2}$ and $A_{it+1} = \bar{A}_{it+1} L_{it+1}^{\alpha_1} L_{it}^{\alpha_2}$ through $L_{it}$).
+While this might be indistinguishable in the model, it impacts the interpretation of the simulation exercise.
+Swapping only $\bar{A}_{i,1900}$ and taking all $\bar{A}_{i,t}, t > 1900$ as estimated in Section 3 could be overestimating (or underestimating) the effect of a one-time shock if $\bar{A}_{i,1900}$ and $\bar{A}_{i,1900+t}$ were correlated or constant. 
+Are estimated $\bar{A}_{i,t}, \forall t > 1,900$ endogenous to the model? Does this affect the theoretical conclusions about a steady state?
+\\
+Additionally, because of the centrality of such estimates, a map of productivity and amenity fundamentals over time, as in Allen and Arkolakis (2014), would clarify the paper.
+\\
+\\
+
+I now list a few minor comments and suggestions, some of which apply directly to this paper while others could be simply discussed, as their implementation is well beyond the (acknowledged) scope of this paper. Comments are roughly ordered by decreasing generality and importance.
+
+First, as mentioned in the first paragraph, spatial spillovers of technology and amenity fundamentals across regions $i$ are totally absent in the model (except through migrations entering $A_{it}$ and $u_{it}$). Incorporating these spatial linkages would help consolidate the bridge between economic geography and urban economics, as these are central to the latter.
+
+Second, one of the key assumptions of the model is that all agglomeration parameters are constant over time and space. This is necessary for tractability, but it is overwhelmingly strong, especially when taken to data spanning multiple centuries.
+
+Third, I believe that the interpretation of the welfare measures deserves a little more discussion. In particular, is the ``\textit{up to scale}'' identification of $P_{it}^{\sigma-1}, \Pi_{it}^{\theta}, \Delta^{\theta}$ important for welfare? How would welfare dispersion be affected if the model featured firm or worker heterogeneity? 
+Does the ranking of welfare across simulations bring additional evidence to the literature initiated by Henderson (1974) on the optimal size of cities?  In particular, do the paper's conclusions support cities being too large, as it would be if larger cities featured lower aggregate welfare?
+More generally, what should we expect the relative agglomeration and dispersion forces be if we were to introduce such heterogeneity? 
+I understand that heterogeneity goes beyond the paper’s scope. However, considering its importance in explaining the strength of agglomeration and spatial sorting of skills and sectors, a discussion on the trade-off between added complexity and accuracy gains could be beneficial. 
+
+Fourth, in Section 4, the authors make the claim that term (i) ($\phi_0^T \ln L_{i0}$) of equation (33) should be interpreted as a lower bound on the role of history on (log) population. This implies that the term (iii) ($\frac{1}{\gamma}\sum_{s=1}^T \phi_1^{T-s} \ln(\Lambda_{is}^\sigma P_{is}^{1-2\sigma})$) goes in the same direction as term (i). Can this claim be proved?
+
+Fifth, from proposition 1 to 2, we lose track of the case with unit root ($\rho(\mathbf{A}(\alpha_1, \beta_1)) = 1$). Could this ``stationary process'' arise? Would the model break down if this was the case? How do we go from $\rho(.) \geq 1$ implying divergence, to $\rho(.) \geq 1$ implying multiple steady states?
+
+In closing, both consequential and minor typos should be corrected. By order of importance: equation (6) should feature $\tau_{ij}^{1 - \sigma}$ rather than $\tau_{ij}^{-\theta}$ ; in equation (32), $\beta_1$ should be \textit{``contemporaneous amenity spillovers''} rather than \textit{``contemporaneous productivity spillovers''} ; footnote (29) states that the problematic F-statistic is from Table 2, but it is actually from Table 3 ; in the note on Figure C.2., my reading of the figure suggests that \textit{``[...] with the red indicating a higher population and blue indicating a lower wage''} should be replaced by \textit{``[...] with the red indicating a higher wage and blue indicating a lower wage''}. There is also a typo below proposition 2 (``\textit{the spillover parametersare}'').
+Finally, should the indices in the welfare equations p.11 be adjusted? Changes between $W_{ijt}$ and $W_{jit}$ are confusing. 
+%On a side note, it is unclear what the subsection ``\textit{Fragility and Resilience}'' is about and whether it adds something to the discussion.
+
+
+
+\iffalse
+
+
+
+
+
+
+
+
+\newpage
+
+\section{Abstract} % (fold)
+\label{sec:abstract}
+
+Definition of path dependence in the context of the spatial distribution of economic activity. \\
+\textbf{Goal}: \textit{"develop and empirically tractable theoretical framework that aims to provide answers to these questions [...] We derive parameter conditions, for arbitrary geographic scenarios, under whic hequilibrium transition paths are unique and yet steady states may nevertheless be non-unique"}, i.e. history (initial conditions) matters.
+\\
+\textit{"we also derive analytical expressions, functions of the particular geography in question, that provide upper and lower bounds on the aggregate welfare level that can be sustained in any ss. We then estimate the model's parameters (which govern the strength of agglomeration externalities and trade and migration frictions), by focusing on moment conditions that are robust to potential equilibrium multiplicity, using spatial variation across US counties from 1800 to the present. Our simulations imply that the location of economic activity in the US today is highly sensitive to variations geographically local historical shocks, and the analytical bounds suggest the possibility of larger historical shocks mattering in the LR."}
+\\
+\\
+\textit{How much of the spatial distribution of econ activity today is determined by history rather than by geographic fundamentals? And if history matters for the distribution, does it also affect overall efficiency? ... develops a tractable theoretical and empirical framework that aims to provide answers to these questions. We derive conditions on the strength of agglomeration externalities, valid for any geography, under which temporary historical shocks can have extermely persistent effects and even permanent consequences (path dependence). We also obtain analytical expressions, functions of the particular geography in question, that bound the aggregate welfare level that can be sustained in any ss thereby bounding the potential impact of history. Our simulations, based on param estimated from spatial variation across US counties from 1800-2000 imply that small variations in historical conditions have substantial consequences for both the spatial distribution and the efficiency of US economic activity, both today and in the LR}
+\section{Introduction} % (fold)
+\label{sec:introduction}
+
+Motivation facts
+\begin{itemize}
+    \item Concentration of economic activities in modern economies + empirical evidence that these economic clusters can be traced historically.
+\end{itemize}
+Question: how widespread is this path dependence (def: \textit{where inital conditions matter for long-run outcomes)}). Or, in other words, to what extent does path dependence exxplain economic geography?
+\\
+\textbf{Theoretical lining:} in the vein of theoretical modeling that \textit{outlines stylized environments in which strong agglomeration spillover effects [that] can give rise to a potential multiplicity of equilibria.} \textit{"From here we set up a dynamic, OLG model of economic geography with an arbitrary number of regions separated by arbitrary trading and migration frictions, as well as arbitrary number of regions separated by arbitrary trading and migration frictions, as well as arbitrary time-varying locational fundamentals ; these features allow us to map the model to empirical settings in which unobserved heterigeneity is typically substantial. To this basic setup we add agglomeration spillovers in production and consumption that, if they are sufficiently strong, can create the possibility for history to matter in determining modern outcomes."}
+\\
+\textbf{Link this to Krugman 91 and other literature covered in W9: if agglomeration forces are strong enough, then initial conditions matter.}
+\\
+\\
+Theory's goal : \textit{clarify when path dependence could potentially occur and quantify how geography constrains its impact.}
+To do so 
+\begin{enumerate}[1.]
+    \item Characterize a condition for dynamic equilibria to be unique. Depends on two elasticities that promote dispersion (cross-locational elasticities of substitution in consumption and in migration decisions) and hinges on the strength of two elasticities that govern contemporaneous agglomeration. 
+    As long as agglomeration elasticities not especially large, the dynamic paths of our economy will be unique for any path of geographic fundamentals. However, may still exist multiple ss equilibria
+    \item Large historical agglomeration externalities (location's productivity and amenity values as functions of the location's lagged population level)\\
+    Large historical spillovers + Low contemporaneous spillovers = unique dynamic paths byt potentially multiple ss. = definition of path dependence
+    \item The potentially multiple ss can be ranked in terms of welfare. Moreover, comes up with analytical bounds for welfare of potential ss, based on underlying geo, strength of the agglomeration forces, the cost of moving people, the cost of moving goods, the spatial variance of payoffs. Ratio of lower / upper bound: limit to the extent to which history matters.
+\end{enumerate}
+4 new theoretical results about this dynamic economic geography model
+\begin{enumerate}
+    \item Condition for dynamic equilibria to be unique, reglardless of the underlying path of geographic fundamentals
+    \item How temporary shocks may be particularly persistent when an economy gets close to the parameter threshold at which uniqueness is not guaranteed
+    \item Necessary conditons for the economy to feature multiple stable steady states
+    \item Bounds on the aggregate welfare
+\end{enumerate}
+Key: strength of agglomeration vs dispersion forces. \textit{Crucially, however, it is contemporaneous agglomeration spillovers that govern equilibrium uniqueness and the duraction of persistence, whereas it is the sum of contemporaneous and historical spillovers that matters for the existence of multiple ss. This means there exists a parameter range that features both well-behaved, unique transition paths as well as right dynamic phenomena such as persistence and path dependence.}
+6 elasticities are important
+\begin{itemize}
+    \item Elasticity of trade (dispersion parameter)
+    \item Migration responses to payoffs (dispersion parameters)
+    \item contemporaneous production spillovers (contemporaneous spillover)
+    \item contemporaneous amenity spillovers (contemporaneous spillover)
+    \item historical production spillovers (historical spillover)
+    \item historical amenity spillovers (historical spillover)
+\end{itemize}
+Section 3: estimate these 6 parameters from a unique dataset on the LR spatial history of the US. Using IV. \textbf{Discuss the validity of the IV strategy}. \\
+Section 4: counterfactual simulations shocking the transition path in terms of productivity fundamentals between 1850 and 2000, holding initial conditions.
+\\
+\textbf{Our counterfactual exercise asks what would have happened  to the trajectory of two similar cities if their 1900 productivity fundamentals were randomly swapped while holding all other conditions constant both before and after 1900.}
+\\
+\textbf{Literature}
+\begin{itemize}
+    \item Empirical literature seeking to estimate some of the ingredients of path dependence 
+    \item Empirical literature focused on the search for direct evidence of path dependence itself
+    \item Theory: draw on the insights of a theoretical literature that pioneered the understanding of the full dynamics of path-dependent geographic settings
+    \item Quantitative economic geography models
+\end{itemize}
+\textit{Our findings.... can provide a benchmark for the interpretation of studie that find persistent impacts of a given historical event and then aim to distinguish the hypothesis of a change to dynamics of fundamentals from the alternative that any temporary shock to fundamentals would have left a persistent geographic trace due to the logic of agglomeration and endogenous spatial lock-in.}
+
+\section{Theoretical Framework - A dynamic economic geography framework}  % (fold)
+\label{sec:theoretical_framework}
+
+\subsection{Setup} % (fold)
+\label{sub:setup}
+N locations indexed by $i$, discrete time $t$, OLG with each individual living 2 periods : childhood born where her parent lives and adulthood when chooses where to live. In adulthood supplies a unit of labor inelastically.
+
+\subsubsection{Production} % (fold)
+\label{ssub:production}
+
+Armington assumption (each location $i$ produces a unique good) ; perfectly competitive firms with CRS.
+Productivity $A_{it}$ depends on $L_{it}$ and $L_{i,t-1}$ where $\a_1$ governs the size of contemporaneous agglomeration externalities, $\a_2$ governs the size of historical agglomeration externalities.
+\begin{align*}
+    A_{it} &= \bar{A}_{it} L_{it}^{\alpha_1} L_{i,t-1}^{\alpha_2}
+\end{align*}
+\textbf{Labor is the only input. Does this rule out shocks on capital? Is capital economic geography? Okayish for post industrial countries but missing pre-industrial dynamics.}
+Do not take a stand on where these agglomeration externalities come from but propose 2 different mechanisms
+\begin{itemize}
+    \item Persistence of local knowledge
+    \item Potential for durable investments in local productivity
+\end{itemize}
+
+
+\subsubsection{Consumption} % (fold)
+\label{ssub:consumption}
+
+Only adults consume, CES preferences. $u_{it}$ depends on 
+\begin{itemize}
+    \item $\bar{u_{it}}$ a flexible exo amenity offerings in any location and time period
+    \item $L_{it}$ and $L_{i,t-1}$ positively or negatively
+\end{itemize}
+\textbf{Parameters $\alpha_1, \alpha_2, \beta-1, \beta_2$ are fixed across all locations and times. Not sure how reasonable this is. Understand would make the model so complicated, but wonderhow important of an assumption it is. THe literature often estimate a range for these parameters, with studies coming up with different estimates depending on the time + place. Because what matters is the absolute sign of $\beta_1 - \beta_2$ and $\alpha_1 - \alpha_2$ etc, if really close to zero, wondering the role of heterogeneity. What about city policies endogenously trying to afffect these parameters?}
+
+\subsubsection{Trade} % (fold)
+\label{ssub:trade}
+Gravity Equation
+
+\subsubsection{Migration} % (fold)
+\label{ssub:migration}
+
+Migration costs + idiosyncratic taste component $\epsilon_j$ for the destination. Also gives a gravity equation for migration
+
+\subsection{Dynamic Equilibrium} % (fold)
+\label{sub:dynamic_equilibrium}
+
+\begin{enumerate}
+    \item Total sales are equal to payments to labor
+    \item Trade is balanced
+    \item Total population is equal to the population arriving in a location
+    \item Total population in the previous period is equal to the number of people exiting a location
+\end{enumerate}
+System of 4*N*T equations and corresponding unknowns \textit{"comprises a high-dimensional nonlinear dynamic system whose analysis can prove challenging. But this task is facilitated by the fact that the system is a collection of additive power equations, where each of the endo variables appears, on either the LHS or RHS, to a particular fixed power, with weights in the system given by an exo "kernel" term that comprises variables that are either exogenous or pre-determined from the persepctive of period $t$. [...] in this manner, a dynamic path can be characterized by understanding a sequence of linked dynamic problems"}.
+\\
+Equation 12 : \textbf{not really sure what is going on here}
+\\
+\\
+\textbf{Proposition 1: For any initial population $\{L_{i0}\}$ and geography $\{\bar{A}_{it} > 0, \bar{u}_{it} > 0, \tau_{ijt} = \tau_{jit}, \mu_{ijt} > 0\}$ there exists an equilibrium. The equilibrium is unique if $\rho(A(\alpha_1, \beta_1)) \leq 1$ where $\rho(.)$ denotes the spectral radius operator}. \\ 
+ie whenever $\alpha_1$ and $\beta_1$ will be sufficiently small, i.e. whenever contemporaneous agglomeration forces will be small enough.
+\\
+\\
+\textbf{How to think about $\beta_1$ vs $\beta_2$? Should they be somehow related?}
+
+\subsection{Persistence and Path Dependence} % (fold)
+
+\subsubsection{Persistence}
+Howlong does a temporary shock to the economy takes to dissipate,
+
+\textit{"Intuitively, if local agglomeration economies are strong enough then there could be multople allocations at which the economy would be in ss - agents who happen to come to reside in a location could find it optimal, on average, to stay there thanks to the reinforcing logic of local positive spillovers".}
+\\
+Assumes (aggregate) fundamentals fixed over time (so ss, not bgp). \\
+\\
+\textbf{Proposition 2: consider an initial population $L_{i0}$ and time invariant geography. Suppose $\rho(A(\alpha_1, \beta_1)) < 1$ so that from Proposition 1, the dynamic equilibrium is unique. Then the following holds: some math...} Provides an upper bound on how much the endogenous variables change from t-1 to t, that depends on previous period's change. \textit{Loosely speaking, the proposition states that the closer the spillover parameters are to the boundaries at which uniqueness can no longer be guaranteed,the greated the possibility of particularly long persistence.}
+
+
+\subsubsection{Path Dependence}
+
+\textbf{Proposition 3: For any time-invariant geography, there exists a steady state equilibrium and that equilibrium is unique is $\rho(.) \leq 1$. Moreover, if $\rho(.) > 1$ there exist many geographies for which there are multiple ss.}
+\\
+\\
+Depends on the size of the total (contemporaneous + historical) spillovers, while proposition 1 depended only on contemporaneous. \textcolor{red}{What is the difference between an equilibrium (given initial condition) and a steady-state equilibrium?}
+\\
+\\
+Thus, what matters for unicity of ss is the historical externalities. The larger they are, the more likely is path dependence to happen. Path dependence only happens if the historical spillovers are large enough to sustain multiple ss. If, given $\alpha_2, \beta_2$, contemporaneous spillovers are small enough, then path is unique. We think of this as well-behaved path dependence.
+\\
+\\ 
+A notion of welfare is equalized across location: in expectation.
+\\
+\\
+
+\subsubsection{Steady-State Welfare Bounds}
+Ex-Ante aggregate welfare 
+\begin{align*}
+    \Omega_{it} &= \sqrt{\Lambda_{i,t-1} \times \Pi_{it}} \\
+    \Pi_{it} = \mathbb{E}[\max_j W_{ijt}(\epsilon)] \text{ the outward migration access}\\
+    \Lambda_{it-1} &= (\sum_j (\frac{L_{jit-1}}{L_{it-1}}) \mathbb{E}[W_{ijt-1}(\epsilon) | i = \argmax_j W_{ijt-1}(\epsilon)]^\theta)^{\frac{1}{\theta}}
+\end{align*}
+Where $\Pi_{it}$ = the expected adulthood period payoff of a child residing in location i at time $t-1$, prior to realising her idiosyncratic shocks $\epsilon$.
+\\
+The period payoff of childhood for the average child residing in location $i$ in period $t-1$ as equal to (the inverse of) the inward migration access.
+\\
+\\
+\textit{\textbf{In the steadu state, it turns out that ex-ante welfare $\Omega_i$ is equalized across all locations} ---> RED LIGHT? Should I really believe that? I guess so, that's at the core of all urban models but... we know it's not true. Maybe ok because we don't have heterogeneous agents.}
+\\
+\\
+These bounds apply when the sum of all spillovers $\rho \equiv \alpha_1 + \alpha_2 + \beta_1 + \beta_2$ is sufficiently strong to possibly generate multiple steady-states, but not so strong as to result in complete concentration of economic activity in one location. Under these conditions, the following proposition provides a relationship between the geography of the economy and the possible values that the ss welfare $\Omega$ can take.
+\\
+\\
+The model predicts that higher population density in locations with higher productivity, higher amenities and higher access to migration destinations, and higher access to imported goods.
+\\
+\\
+\textbf{Proposition 4: Consider any time-invariant geography and suppose that $\rho \geq 0$ so that multiple ss may exist. Then the equilibrium welfare values $\Omega$ across all steady states are bounded by}
+\begin{align*}
+    \bar{\Omega} &\equiv c_1 \bar{\lambda}_M^{\frac{-1}{\theta}} \bar{\lambda}_T ^{\frac{-1}{\sigma-1}} \bar{L}^{\rho - \frac{1}{\theta}} \\
+    \underline{\Omega} &\equiv c_2 \underline{\lambda}_M^{\frac{1}{\theta}} \underline{\lambda}_T ^{\frac{1}{\sigma-1}} \frac{\bar{L}}{N}^{\rho}
+\end{align*}
+Where $\bar{\lambda}_M,\underline{\lambda}_M$ are the max and min eigenvalues (by moduli) of the migration matrix and $\lambda_T$ corresponding for the trade matrix. $c_1$ and $c_2$ are constant. \textcolor{red}{wtf}.
+\\
+\\
+
+
+\subsection{A Path Dependence Example} % (fold)
+\label{sub:a_path_dependence_example}
+
+Really cool Figure 2 on the impact of $\alpha_2$ and same for Figure 3
+
+
+
+
+
+
+
+\section{Identification and Estimation} % (fold)
+\label{sec:identification_and_estimation}
+
+\textit{"Proceduce for mapping the above model into observable features of the US economy throughout the past two centuries. The goal is to estimate the elasticity parameters ($\alpha_1, \beta_1, \alpha_2, \beta_2, \sigma, \theta)$ that are critical for assessing the likelihood and strength of path dependence, as well as the geographic fundamentals that shift the consequences of path dependence".}
+
+\subsection{Data} % (fold)
+\label{sub:data}
+\begin{itemize}
+    \item Subnational regions $i$ of the coterminous US for as long a history as possible
+    \item $L_{it}$: decennial Census records of county-level pop by age group (from 1800 onwards) Consider persons aged 25-74 as adults ; 50-year steps
+    \item $w_{it}$
+    \begin{itemize}
+        \item 1850-1950 $w_{it} L_{it}$ proxied by the estimated value of county-level agr and manufacturing output
+        \item 2000: per-capita income reported in the census
+    \end{itemize}
+    \item \textbf{Discussion on the level of $i$: 4,975 sub-county regions $i$}
+\end{itemize}
+
+
+\begin{itemize}
+    \item "\textit{to avoid overlaps of these cohorts of 20-69 years olds, we then work only with the Census data for every 50 years}"
+    \item \textit{"The third data ingredient concerns intra-national trade flows $X_{ijt}$. To the best of our knowledge this is only publicly available (within the 1850-2000 period) beginning in the year 1997 from the CFS".} \textcolor{red}{so how do you address this problem? Unclear?}
+    \item \textit{"Finally, an IV estimation procedure that we describe below requires observable proxies for the geographic productivity and amenity terms, for which we collect contemporary measures of elevation, soil quality, temperature, and precipitation" (\textbf{please correct the typo of "an precipitation"}) "For the purpose of constructing valid instruments, we treat these observed geographic characteristics as time invariant properties of a location"}. \textcolor{red}{Is there any literature supporting this. Doesn't seem to be a major issue, but kinda feels artificial that the IV strategy works by assumption. Can't test it if you only take these as a screenshot}
+\end{itemize}
+\textcolor{red}{What if choose differnce census years?}
+
+\subsection{Identification and Estimation} % (fold)
+\label{sub:identification_and_estimation}
+
+3-step estimation procedure to recover estimates of interesting elasticities and geo fundamentals
+
+\begin{enumerate}
+    \item Determine the level of the trade and migration cost terms, raised to their respective elasticity exponents, that enter the equilibrium system of equations. Use available data on intranational trade $X_{ijt}$ and migration $L_{ijt}$ in our context: the 1997 Consumer Flow Survey (CFS) which measures trade flows, and Census data from 1850 onwards documenting the state of birth of each repsondent. \textbf{State to state levels ; but $i$ is smaller} \textit{This aggregation introduces the measurement errors $\epsilon_{ijt}$ and $\nu_{ijt}$, which we assume are uncorrelated with distance. We note that Monte, Redding and Rossi-Hansberg 2018 find the aggregation bias from applying gravity regressions on the CFS data at the CFS area level to county level data to be small.}
+    \\
+    Obtain
+    \begin{align*}
+        \ln X_{ijt} &= \kappa \ln dist_{ij} + \gamma_{it} + \delta_{jt} + \epsilon_{ijt} \\
+        \ln L_{ijt} &= \lambda_t \ln dist_{ij} + \rho_{it} + \pi_{jt} + \nu_{ijt}
+    \end{align*}
+    \item Use $dist_{ij}^{\lambda_t}$ and $dist_{ij}^{\kappa}$ known from step 1, rewrite the system of equilibrium equations and show that $P_{it}^{\sigma-1}, \Pi_{it}^\theta, \Lambda^\theta$ etc identified up to scale. \textbf{Does it have an impact on the welfare measures??}
+    \item Using the above and imposing $Y_{it} = w_{it} L_{it}$ (how important is this? Market clearing? Does it hold in the data??) to obtain the inverse demand equation for labor in location i $\ln w_{it} = f(\frac{\sigma-1}{\sigma}, \frac{-1}{\sigma})$ where $\frac{-1}{\sigma}$ the inverse elasticity of demand for goods from a location, moderated by $\frac{\sigma-1}{\sigma}$ because the location faces a downward-sloping demand curve for its output. etc.
+    \\
+    Also obtain the inverse supply equation for labor $\ln w_{it}$
+\end{enumerate}
+\textit{The locational demand-supply system above generalizes that in the RR framework in two senses. First, it relaxes the assumption that locations produce a homogenous and freely traded product. Second it relaxes the assumption that all workers have identical preference across locations and face no costs of migrating. This added flexibility necessitates the inclusion of the market access therms and $\Gamma$ as demand and supply shifters, as recovered in step 2.}
+\\
+Demand / Supply framework = simultaneity bias = IV procedure that exploits the model's feature that exo shifters of amenities (components of $\bar{u_{it}}$ would be valit instruments for estimating the demand equation (31) and exo shifters of productivities (components of $\bar{A_{it}}$ would be valid instruments for estimating the supply equation as long as those shifters are orthogonal to each other.))
+\\
+\begin{itemize}
+    \item IV for the demand equation: linear time trend * average maximum temperature in the warmest month and average minimum temperature in the coldest month + squared values.
+    \item IV for supply equation: take advantage of two major changes in US agriculture. 
+    \begin{itemize}
+        \item Increased use of more intensive cultivation practices (raised land productivity) : differential potential yield under low and high intensity cultivation for corn * linear time trend (mean differential + standard deviation of the differential yield)
+        \item Shift in world demand that has altered which crops are grown in the US, most notably soy: proxy for which locations saw the greatest gain in revenue productivity from this shift, use the predicted difference in potential yield between soy and wheat (which locations are more likely to switch, basically) and interact with linear time trend.
+    \end{itemize}
+    \textbf{What if these two instruments interact? Multiple instruments literature ??}
+    \\
+    \textbf{\textit{Finally, when estimating the demand equation, we use the climate amenity based IVs, but additionally control for the agricultural productivity variables (in order to reduce the residual variation and the risk that our amenity based IVs are correlated with unobserved productivity variation). Analogously, our estimation of the supply equation includes controls for the climate amenity variables.}}
+\end{itemize}
+
+
+
+
+\subsection{Estimation Results} % (fold)
+\label{sub:estimation_results}
+\begin{itemize}
+    \item $\kappa = -1.35$ (1997 trade data) elasticity of trade flow with respect to distance
+    \begin{itemize}
+         \item Dingel 2017: -0.97
+         \item Hillberry and Hummels 2008: -1.31 at one mile, -0.91 at mean distance of 523 miles
+     \end{itemize}
+     \item $\lambda_t$ from -1.51 to -2.16 with no clear trend over the 150 years spanned
+     \begin{itemize}
+          \item Allen Arkolakis 2018: -1.3 to -2.3
+          \item -0.7 Indonesia Bryan and Morten 2019
+          \item -1.5 India Imbert and Papp 2020
+      \end{itemize} 
+      \item With $\sigma=9$ we estimate $\hat{\alpha_1} = 0.11, \hat{\alpha_2} = 0.04$
+      \item With $\sigma=9$ and $\theta=4$ we get $\beta_1 = -0.15 (SE=0.279)$ and $\beta_2  = 0.33 (SE=0.179)$ \textbf{quite WEAK}
+\end{itemize}
+Approach transparent: estimate all parameters, but imprecise --> estimate only $\alpha$ and $\beta$ assuming usual $\sigma, \theta$ from the literature. But wondering whether the $\alpha, \beta$ in the model should change the $\sigma, \theta$ from the literature maybe because they capture some new mechanisms that don't fall into the elasticty anymore?
+\\
+
+
+  
+
+
+\section*{Section 4: Does history matter for the US Spatial Economy?} % (fold)
+\label{sec:section_4_does_history_matter_for_the_us_spatial_economy_}
+
+
+\subsection*{How much can history explain US economic geography?} % (fold)
+\label{sub:how_much_can_history_explain_us_economic_geography_}
+
+
+model-based decomposition that can be used to quantify the extent to which spatial inequalities across the US exist because of unequal historical conditions.
+
+Equation 20 implies 33
+\begin{align*}
+    \gamma \ln L_{it} &= C_t + \sigma \ln \bar{u}_{it} + (\sigma - 1) \ln \bar{A}_{it} - (2 \sigma - 1) \ln P_{it} - \sigma \ln \Lambda_{it} + (\alpha_2 (\sigma - 1) + \beta_2 \sigma) \ln L_{i,t-1} \\
+    ln L_{iT} &= C + \phi_0^T \ln L_{i0} + \frac{1}{\gamma} + \sum_{s=1}^T \phi_1^{T-s} \ln (\bar{u}_{is}^{-\sigma} \bar{A}_{is}^{\sigma-1}) + \frac{1}{\gamma} \sum_{s=1}^{T} \phi_1^{T-s} \ln (\Lambda_{is}^\sigma P_{is}^{1-2\sigma})
+\end{align*}
+Terms for
+\begin{itemize}
+    \item Exo historical conditions $L_{i0}$ = history
+    \item Paths of exo productivities $A_{it}$ and amenities $u_{it}$ = geography fundamentals
+    \item paths of endogenous market access for trade $P_{it}$ and migration $\Lambda_{it}$ = combination
+\end{itemize}
+\textcolor{red}{We therefore view term (i) as a lower bound on the role of history in this decomposition. \textbf{but what if (iii) was not reinforcing but going in the opposite direction??}}
+\\
+\\
+History matters for the distribution of population and a little less for the distribution of welfare : consistent with equilibrium
+
+
+\subsection*{Persistence in the US Spatial Economy} % (fold)
+\label{sub:persistence_in_the_us_spatial_economy}
+
+
+
+\subsection{Path Dependence in the US Spatial Economy} % (fold)
+\label{sub:path_dependence_in_the_us_spatial_economy}
+
+\textit{Behavior of locations' ex-ante welfare, because they will be equal once any steady-state has been reached.}
+
+\begin{itemize}
+    \item Aggregate welfare in each simulation rises as population distribution gets closer and closer to more efficient allocation of resources
+    \item 300/400 years to stabilize, but still converging reaaaally slowly
+    \item periods of temporary divergence are common
+    \item path dependence with aggregate welfare consequences
+\end{itemize}
+
+\textit{Finally, the presence of multiple steady-states begs the question of what these various configurations look like, geographically speaking.} \textbf{Would have loved more discussion about it. } \textbf{Whether the swapped populations are geographically closed, as migration and trade costs differ by distance. not surprising that steady states are different geographically}
+
+
+
+
+\newpage
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+
+
+\section{FROM THE LECTURES} % (fold)
+\label{sec:from_the_lectures}
+
+Need to write down somewhere what they account for, what they don't, and where it falls into the literature
+
+\subsection{Week 1 : Gains from Trade and Comparative Advantage} % (fold)
+\label{sub:week_1_gains_from_trade_and_comparative_advantage}
+
+General Equilibrium
+\\
+Neoclassical Trade Models: 3 key assumptions
+\begin{itemize}
+    \item Perfect Competition
+    \item CRS
+    \item No distortion
+\end{itemize}
+Get canonical results of gains from trade and comparative advantage
+
+\subsection{Week 2: Deterministic Ricardian Models} % (fold)
+\label{sub:week_2_deterministic_ricardian_models}
+
+In neoclassical model, comparative advantage (lower relative autarkic marginal cost) is at the basis for trade. Autarky cost differences because often supply differences
+\begin{itemize}
+    \item Techno differences (Ricardian Theory ; DFS 1977)
+    \item Factor-endowment differences (Ricardo-Viner and Heckscher-Ohlin)
+    \item IRS (beyond neoclassical scope)
+\end{itemize}
+
+
+\subsection{Week 3: Probabilistic Ricardian Models} % (fold)
+\label{sub:week_3_probabilistic_ricardian_models}
+
+More structural assumptions on Ricardian Models : do not predict which country makes which goods
+\begin{itemize}
+    \item Anderson 1979: Armington Model (one good per country) with CES preferences
+    \item Eaton \& Kortum 2002 (ECMA): CES preferences, probabilistic technology with Fréchet distribution ; estimate the trade elasticity
+    \item Empirical estimation of Ricardian Predictions
+    \begin{itemize}
+        \item Deardorff 1984
+        \begin{itemize}
+            \item Specialization is selection: can't infer labor costs for goods not produced
+            \item Dimension mismatch (from 2 to multiple countries)
+        \end{itemize}
+        \item Ad hoc regressions
+        \begin{itemize}
+            \item Regress relative export volumes on relative productivities
+            \item Regress relative exports to third markets on relative productivity 
+            \item Regress exports on sector-country interactions: test whether observable sources of CA govern trade patterns
+        \end{itemize}
+        \item Costinot, Donaldson, Komunjer 2012: A quantitative exploration of Ricardo's ideas
+    \end{itemize}
+\end{itemize}
+
+
+\subsection{Week 4: Gravity and Gains from Trade} % (fold)
+\label{sub:week_4_gravity_and_gains_from_trade}
+
+Gravity for trade but also for urban economics
+\begin{itemize}
+    \item For commuting flows
+    \item For consumption in the city
+\end{itemize}
+
+Trade costs
+\begin{itemize}
+    \item Direct measurement: transport prices
+    \begin{itemize}
+        \item Hummels (JEP 2007): lots of direct measures : goes down a lot internationally
+    \end{itemize}
+    \item Inferring from observed exchanges 
+    \item Inferring from price gaps
+\end{itemize}
+
+
+\subsection{Week 5: Multiple factors of Production} % (fold)
+\label{sub:week_5_multiple_factors_of_production}
+
+Allows us to talk about the distributional consequences of trade.
+
+
+\subsection{Week 6: Increasing Returns and Home-Market Effects} % (fold)
+\label{sub:week_6_increasing_returns_and_home_market_effects}
+
+Does size matter? While in neoclassical trade models the pattern of specialization is size-invariant (Ricardo, Heckscher-Ohlin), in new trade theory (Krugman, 79 onwards), size can influence the pattern of specialization because theere are economies of scale. Home market effect
+
+
+\subsection{Week 7: Heterogeneous Firms} % (fold)
+\label{sub:week_7_heterogeneous_firms}
+
+
+
+\subsection{Week 8: Models of agglomeration} % (fold)
+\label{sub:week_8_models_of_agglomeration}
+
+Spatial Equilibrium
+\begin{itemize}
+    \item No arbitrage condition (Glaeser and Gottlieb (JEL 2009)), utility equalization
+    \item Benchmark (because theory of equalizing differences applied to cities for both workers and firms): Rosen and Roback 
+    \begin{itemize}
+        \item Variations across cities, not within cities
+        \item Cities are point
+        \item No notion of distance
+    \end{itemize}
+    \item Evidence of agglomeration economies
+    \begin{itemize}
+        \item Greenston, Hornbeck and Moretti (JPE 2010) : use "million-dollar plants" to estimate agglomeration economies
+        \item Bleakley and Lin - Portage and Path Dependence (QJE 2012)
+        \item Combes and Gobillon - The empirics of Agglomeration Economies
+        \item Lin and Rauch - What future for history dependence in spatial economics?
+    \end{itemize}
+\end{itemize}
+
+
+\textcolor{red}{Do we have firms here?}
+\\
+\\
+Henderson (1974): the sizes and types of cities
+\begin{itemize}
+    \item Why do cities exist?
+    \item Are cities too large or too small? A stability argument says that cities tend to be too large \textcolor{red}{Does the path dependence paper say anything about this? Or in terms of region size? Not really}
+    \item Why do cities of different sizes exist?
+\end{itemize}
+
+
+Behrens, Duranton, Robert-Nicoud (2014)
+\begin{itemize}
+    \item Agglomeration economies in the empirical literature
+    \begin{itemize}
+        \item \textcolor{red}{Confirmed by the PD paper? If yes then should refer to it in terms of position in the literature}
+        \item Causal positive relationship between city size and productivity (Ciccone and Hall 1996, Combes Duranton Gobillon Roux 2010, Greenstone Hornbeck Moretti 2010 etc)
+        \item \textcolor{red}{PD paper considers that what happens within city is a \textbf{micro} mechanism, but this is not what they're deeply interested in}
+        \item 
+    \end{itemize}
+\end{itemize}
+
+
+ARSW 2015
+\\
+\textcolor{red}{Spillovers across cities / regions are totally absent from the path dependence paper. Makes sense when looking at economic geography, but key for urban economics. Is it important considering that we're looking at regions rather than purely cities?}
+
+Dingel and Tintelnot 2020
+
+
+
+\subsection{Week 9: Economic Geography} % (fold)
+\label{sub:week_9_economic_geography}
+THE KEY
+
+\begin{itemize}
+    \item Model 1: Krugman 1991 : the breakthrough paper
+    \item Model 2: Helpman 1998 a reformulation more popular in empirical and quantative exercises
+    \item Model 3: Allen and Arkolakis (2014) a substantial generalization to almost all continuous geographies
+\end{itemize}
+Evidences
+\begin{itemize}
+    \item Davis and Weinstein: Bones, Bombs and Breakpoints
+    \item Redding and Sturm : the costs of remotness: evidence from german division and reunification
+\end{itemize}
+
+
+Krugman 91
+\begin{itemize}
+    \item Circular causation through home market effect
+    \item A two region model
+\end{itemize}
+
+Davis and Weinstein Bones Bombs and Breakpoints
+\begin{itemize}
+    \item Assess three competing theories: locational fundamentals, increasing returns, random growth
+    \item Bones: data on japanese population from more than 8,000 years
+    \item Bombs: does a temporary shock have permanent effets? After the allied bombing in WWII, most cities returned to their relative position in the distribution of city sizes within about 15 years. Gibrat's law= growth rate independent from initial stock
+    \begin{itemize}
+        \item Miguel and Roland JDE 2011: even the most intense bombing in human history did not generate local poverty traps in vietnam
+        \item Other hand: Bleakley and Lin (QJZ 2012) Portage
+    \end{itemize}
+\end{itemize}
+
+Allen Arkolakis QJE 2014
+\begin{itemize}
+    \item The stylized nature of geography in many economic-geography models makes them awkward to take to data
+    \item Develop quantitative framework that extends new economic geography to much broader class
+    \item Derive sufficient conditions for existence and uniqueness of eq in spatial geography models (continuum of location)
+    \item Illustrative quantitative exercise: what was the welfare effect of the interstate highway system?
+    \\
+    \\
+    \item Model on geography
+    \begin{itemize}
+        \item Continuum of locations
+        \item Productivity is made of population and exogenous part (productivity fundamentals) ; same for amenities
+        \item Local spillovers (only affect i)
+        \item Iceberg trade costs
+        \item CES preferences of workers
+        \item Conditions on existence and uniqueness of steady state / Equilibrium
+        \item \textcolor{red}{Have map of estimated composite productivity and amenity, and exogenous amenity and productivity}
+        \item \textcolor{red}{Could the PD paper say anything about prices? Numeraire?}
+        \item Estimated change in population from removing IHS, and change in price index (increasing trade costs) \textcolor{red}{Was built after 1900 : cannot pretend that trade costs are constant...}
+    \end{itemize}
+\end{itemize}
+
+
+\subsection{Week 10: Spatial Sorting of Skills and Sectors} % (fold)
+\label{sub:week_10_spatial_sorting_of_skills_and_sectors}
+
+\textcolor{red}{DP paper: homogenous workers, but here we know that heterogeneity key to explain agglomeration, spatial sorting of skills and sectors (also 1 firm, 1 type of workers). Beyond the scope of the paper to go this way, but could they develop about it a little? }
+\\
+\\
+Why should we are about spatial sorting?
+\begin{itemize}
+    \item They vary a lot, covary with city characteristics, often the basis for identification
+\end{itemize}
+
+How shuold we characterisze skills and sectors?
+\begin{itemize}
+    \item More types threaten to make theoretical models intractable
+    \item More types increase the burden of finding instruments
+    \item What about a continuum of skills? Data issue arguably
+\end{itemize}
+
+What tools are relevant for building and estimating models?
+
+
+\fi
+
+
+\end{document}

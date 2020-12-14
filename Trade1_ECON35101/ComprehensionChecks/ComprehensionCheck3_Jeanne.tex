@@ -1,0 +1,299 @@
+\documentclass[10pt, final]{article}
+%\usepackage[document]{ragged2e}
+\usepackage[utf8]{inputenc}
+
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+ 
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Comprehension Check 3 - Jeanne Sorin}
+\cfoot{\thepage}
+
+\usepackage{multirow}
+\usepackage{hyperref}
+
+\usepackage{soul}
+
+\usepackage{enumerate}
+\usepackage{amssymb}
+\usepackage{amsmath, mathtools}
+\usepackage{amsopn}
+\usepackage{amsthm}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{amsfonts}
+\usepackage[makeroom]{cancel}
+% \usepackage{wasysym}
+\usepackage[paperwidth=8.5in,left=1in,right=1in,paperheight=11.0in,top=1in, bottom=1in]{geometry}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings}
+
+\usepackage{pgfplots}
+
+\pgfplotsset{compat = 1.15}
+%\pgfplotsset{scaled y ticks=false}
+\usetikzlibrary{positioning}
+\usepackage{mathtools}
+
+\usepackage{listings}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\detr}{det}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\Real}{Re}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\argmax}{argmax}
+\DeclareMathOperator{\vect}{vec}
+
+
+% Additional commands/shortcuts to make our life easier
+\newcommand{\bm}{\begin{bmatrix}}
+\newcommand{\fm}{\end{bmatrix}}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\D{\Delta}
+\def\d{\delta}
+\def\z{\zeta}
+\def\k{\kappa}
+\def\l{\lambda}
+\def\n{\nu}
+\def\e{\varepsilon}
+\def\r{\rho}
+\def\s{\sigma}
+\def\S{\Sigma}
+\def\t{\tau}
+\def\x{\xi}
+\def\w{\omega}
+\def\W{\Omega}
+\def\th{\theta}
+\def\p{\phi}
+\def\P{\Phi}
+\newcommand{\pa}{\mathcal \partial}
+\newcommand{\No}{\mathcal N}
+\def\munderbar#1{\underline{\sbox\tw@{$#1$}\dp\tw@\z@\box\tw@}}
+
+
+\title{Comprehension Check 3}
+\author{Jeanne Sorin}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newcommand{\hatxi}{\hat{\mathbf{x}}^i}
+\newcommand{\tildexi}{\tilde{\mathbf{x}}^i}
+
+
+\maketitle
+
+\textbf{Preliminary setup}:
+From the model we have
+%\textit{If the entire population lived in a single city, then desirability $\tau$ would be a sufficient statistic for attractiveness $\gamma$. In that case, equilibrium locational assignments and prices can be characterized as in standard land-use models, as we show in Appendix A.1.}
+%\\
+%\textit{Competition among landlords ensures that the most desirable locations are those occupied, so the least desirable occupied site in a city $\bar{\tau}(c) = \sup_\tau \{\tau : f(\omega, c, \tau \sigma) > 0\}$ ina city of population L is defined by $L = S(\bar{\tau}(c)$. Less desirable locations have lower rental prices and the least desirable occupied site has a rental price of 0.} 
+
+\begin{itemize}
+    \item Individuals maximizing utility by choosing their location $\tau$ and their sector $\sigma$ st
+    \begin{align}
+        f(\omega, \tau, \sigma) > 0 &\Leftrightarrow \{\tau, \sigma\} \in \argmax U(\tau, \sigma, \omega) \\
+        U(\tau, \sigma, \omega) &= T(\tau) H(\omega, \sigma) p(\sigma) - r(\tau)
+    \end{align}
+
+    \item Final-good producers choose intermediate goods indexed by $\sigma$ st
+    \begin{align}
+        Q(\sigma) &= I(\frac{P(\sigma)}{B(\sigma)})^{-\epsilon}
+    \end{align} 
+    Where $I$ denotes total income as is a function of $L, q(.), p(.) f(.)$. 
+
+    \item Absentee Landlords choose rents $r(\tau)$ such that unoccupied locations have rental prices of $0$
+    \begin{align}
+        r(\tau) \times (S'(\tau) - L \int_{\sigma} \int_{\omega} f(\omega, \tau, \sigma) d \omega d \sigma)) = 0, \forall \tau
+    \end{align}
+
+
+    \item Market clearing
+    \begin{itemize}
+        \item The endogenous quantity of individuals of skill $\omega$ residing at $\tau$ and working in $\sigma$, $L \times f(\omega, \tau, \sigma)$ is st the supply of a location type $\geq$ its demand
+        \begin{align}
+            S'(\tau) \geq L \int_{\omega} \int_{\sigma} f(\omega, \tau, \sigma) d \sigma d \omega, \forall \tau
+        \end{align}
+
+
+        \item The demand and supply of intermediate goods are equal
+        \begin{align}
+            Q(\sigma) = L \int_{\omega} \int_{\tau} q(\tau, \sigma, \omega) f(\omega, \tau, \sigma) d\omega d\tau, \forall \sigma
+        \end{align}
+
+
+        \item Every individual is located somewhere
+        \begin{align}
+            f(\omega) = \int_{\sigma} \int_{\tau} f(\omega, \tau, \sigma) d \tau d \sigma, \forall \omega
+        \end{align}
+    \end{itemize}
+\end{itemize}
+Moreover, we define
+\begin{itemize}
+    \item Commuting costs
+    \begin{align*}
+        T(\tau) &= d_1 - d_2 \tau
+    \end{align*}
+    \item The supply of locations with innate desirability of at least $\tau$
+    \begin{align*}
+        S(\tau) &= \pi \tau^2 \\
+        S'(\tau) &= 2 \pi \tau
+    \end{align*}
+    \item The income of workers of skill $\omega$
+    \begin{align*}
+        G(\omega) &= g \omega & g \text{ a constant}
+    \end{align*}
+    \item The skill distribution
+    \begin{align*}
+        \omega &\sim U(\underline{\omega}, \bar{\omega})
+    \end{align*}
+\end{itemize}
+
+\begin{enumerate}[1.]
+    \item \textit{Show that $\bar{\tau}$ and $\underline{\gamma}$ depend only on the exogenous parameters $L, d_1, d_2$. }\\
+    \\
+    \textbf{Regarding $\bar{\tau}$}:
+    \\
+    In order to get closed-form solutions, we take advantage of Appendix A.1 of the paper, that gives us that $N(.)$ gives a one-to-one mapping from $\tau$ to $\omega$ such that
+    \begin{align*}
+        N(\tau) &= F^{-1}(\frac{L(c) - S(\tau)}{L(c)}) = \omega
+    \end{align*}
+    Where $F(.)$ is the CDF of the skill distribution $\omega$, and $S(\tau) = L \int_0^{\tau} \int_{\sigma} \int_{\omega} f(\omega, x, \sigma) d\omega d\sigma dx$. We are given that $L$ is given and that $\omega \sim U[\underline{\omega}, \bar{\omega}]$. Therefore, $F^{-1}(x) = \underline{\omega} + (\bar{\omega} - \underline{\omega}) \times x$. With $x = \frac{L - S(\tau)}{L}$, this gives us that
+    \begin{align*}
+        N(\tau) = \omega &= F^{-1}(\frac{L(c) - S(\tau)}{L(c)}) \\
+        &= \underline{\omega} + (\bar{\omega} - \underline{\omega}) \times \frac{L - S(\tau)}{L} \\
+        &= \underline{\omega} + (\bar{\omega} - \underline{\omega}) \times \frac{L - \pi \tau^2}{L} & S(\tau) \equiv \pi \tau^2 \\
+        \frac{\omega - \underline{\omega}}{\bar{\omega} - \underline{\omega}} &= \frac{ L - \pi \tau^2}{L} \\
+        \tau^2 &= (1 - \frac{\omega - \underline{\omega}}{\bar{\omega} - \underline{\omega}}) \frac{L}{\pi}  \\
+        \tau &= \sqrt{(1 - \frac{\omega - \underline{\omega}}{\bar{\omega} - \underline{\omega}}) \frac{L}{\pi}}
+    \end{align*}
+    Given L, we have our one-to-one mapping between $\tau$ and $\omega$, where $\tau$ is decreasing in $\omega$ So
+    \begin{align*}
+        \bar{\tau} &= \tau(\underline{\omega}) = \sqrt{\frac{L}{\pi}} \\
+        \underline{\tau} &= \tau(\bar{\omega}) = 0
+    \end{align*}
+    The city edge, characterized by $\bar{\tau}$ is therefore only a function of exogenous parameters, and in particular of $L$\footnote{Non-closed form version (more general):
+   Define $\bar{\tau}$ as the highest inverse desirability that is occupied in the city, and, likewise, $\underline{\gamma} = A(c) T(\bar{\tau}) = T(\bar{\tau})$ the lowest attractiveness of a location in the city that is occupied.
+    \\
+    From the paper (without the $(c)$ index as we only have one city here)
+    \begin{align*}
+        \bar{\tau} \equiv \sup_{\tau}\{\tau : f(\omega, \tau, \sigma) > 0\}
+    \end{align*}
+    Besides, from equations (1) and (2) we see that $f(\omega, \tau, \sigma)$ is a function of $T(\tau) = d_1 - d_2 \tau$ and $r(\tau)$ the rental rate in location $\tau$ which, according to (4), is chosen to maximize landlords' utility and such that 
+    \begin{align*}
+        S'(\tau) &=  L \int_\sigma \int_\omega \sigma f(\omega, \sigma, \tau) d \sigma d\omega \\
+        \text{or } S'(\tau) &<  L \int_\sigma \int_\omega \sigma f(\omega, \sigma, \tau) d \sigma d\omega \implies r(\tau) = 0
+    \end{align*}
+    At $\tau = \bar{\tau}$ it must be the case that 
+    \begin{align*}
+        r(\bar{\tau}) &= 0 \\
+        S'(\bar{\tau}) &= 2 \pi \bar{\tau} = L \int_\sigma \int_\omega \sigma f(\omega, \sigma, \bar{\tau}) d \sigma d\omega 
+    \end{align*}
+    So
+    \begin{align*}
+        \bar{\tau} &= \frac{1}{2 \pi } L \int_\sigma \int_\omega \sigma f(\omega, \sigma, \bar{\tau}) d \sigma d\omega 
+    \end{align*}
+    where from (1) and (2)
+    \begin{align*}
+        f(\omega, \bar{\tau}, \sigma) \text{ st } \sigma \in \argmax U(\bar{\tau}, \sigma, \omega) = \argmax (d_1 - d_2 \bar{\tau}) H(\omega, \sigma) p(\sigma) - \underbrace{r(\bar{\tau})}_{= 0}
+    \end{align*}
+    Finally
+    \begin{align*}
+        \bar{\tau} &= \frac{1}{2 \pi } L \int_\sigma \int_\omega \sigma \underbrace{f(\omega, \sigma, \bar{\tau})}_{\text{a function of } d_1, d_2} d \sigma d\omega 
+    \end{align*}
+}.
+    \\
+    \\
+    \textbf{Regarding $\underline{\gamma}$}:
+    \\
+    Given the functional forms we are given for $T(\tau)$, and $A(c) = 1$, we have
+    \begin{align*}
+        \gamma &= T(\tau) = d_1 - d_2 \tau
+    \end{align*}
+    is decreasing in $\tau$ so
+    \begin{align*}
+        \underline{\gamma} &= d_1 - d_2 \bar{\tau}
+    \end{align*}
+    simply depends on the exogenous parameters $d_1, d_2$ directly and $L$ through $\bar{\tau}(L)$
+ 
+
+
+    \item \textit{The rent at the city edge $\bar{\tau}$ is zero. What is the rent at the center of the city $\tau = 0$?}
+    \\
+    Let's figure out rents as a function of $\tau$: from Appendix A.1, Lemma 7 we have
+    \begin{align*}
+        r(\tau) &= -A \int_{\tau}^{\bar{\tau}} \underbrace{T'(t)}_{-d_2} G(\underbrace{N(t)}_{\omega}) dt \\
+        &=  d_2 \int_{\tau}^{\bar{\tau}} G(\underline{\omega} + (\bar{\omega} - \underline{\omega}) \times \frac{L - \pi \tau^2}{L})dt \\
+        &= d_2 \int_{\tau}^{\bar{\tau}} G(\bar{\omega} - (\bar{\omega} - \underline{\omega}) \times \frac{\pi t^2}{L}) dt  \\
+        &= d_2 \times g \times \int_{\tau}^{\bar{\tau}} \bar{\omega} - (\bar{\omega} - \underline{\omega}) \times \frac{\pi t^2}{L} dt & \text{using } G(x) = g \times x \\
+        &= d_2 \times g \times [\bar{\omega} t - (\bar{\omega} - \underline{\omega}) \frac{\pi t^3}{3 L})]_{\tau}^{\bar{\tau}} \\
+        &= d_2 \times g \times [\bar{\omega} (\bar{\tau} - \tau) - (\bar{\omega} - \underline{\omega}) \frac{\pi}{3 L} (\bar{\tau}^3 - \tau^3))]
+    \end{align*}
+    For $\tau = 0$
+    \begin{align*}
+        r(0) &= d_2 \times g \times [\bar{\omega} \bar{\tau} - (\bar{\omega} - \underline{\omega}) \frac{\pi}{3 L} (\bar{\tau}^3)] 
+    \end{align*}
+    Plugging in for $\bar{\tau} = \sqrt{\frac{L}{\pi}}$ from the previous question
+    \begin{align*}
+        r(0) &= d_2 \times g \times \sqrt{\frac{L}{\pi}} (\frac{1}{3} \underline{\omega} + \frac{2}{3} \bar{\omega})
+    \end{align*}
+
+
+
+    
+    \bigskip
+    \item \textit{Suppose that $g$ increases. What happens to the rent schedule? What happens to the equilibrium utility of each skill level?}
+    \\
+    \\
+    From above, we have that $r(.)$ is increasing in $g$ so an increase in $g$ will lead to an increase in rents, at all $\tau$ and therefore at all $\omega$.
+    \\
+    Regarding the utility:
+    \begin{align*}
+        U(\tau, \sigma, \omega) &= T(\tau) H(\omega, \sigma) p(\sigma) - r(\tau) \\
+        &= (d_1 - d_2 \tau) G(\omega) - r(\tau) &\text{using } G(\omega) = H(\omega, M(\omega))p(M(\omega))\\ 
+        &= (d_1 - d_2 \tau) g \omega - r(\tau) \\
+        &= (d_1 - d_2 \tau) \omega g - d_2 \times g \times [\bar{\omega} (\bar{\tau} - \tau) - (\bar{\omega} - \underline{\omega}) \frac{\pi}{3 L} (\bar{\tau}^3 - \tau^3))]  \\
+        &= g \times \{(d_1 - d_2 \tau) \omega - d_2 \times [\bar{\omega} (\bar{\tau} - \tau) - (\bar{\omega} - \underline{\omega}) \frac{\pi}{3 L} (\bar{\tau}^3 - \tau^3))]\}
+    \end{align*}
+Therefore, the utility of each worker $\omega$ is linear in $g$. An increase in $g$ shifts everyone's utility up.
+
+
+
+    \item \textit{What happens to the equilibrium utility of $\bar{\omega}$ if the value of $\underline{\omega}$ increases? (skill compression)}
+    \\ 
+    \\
+    In the previous question we showed that $\bar{\tau}$ and $\underline{\gamma}$ only depend on $L, d_1, d_2$, which are unaffected here. Therefore, the city-edge, characterized by $\bar{\tau}$ will remain unchanged. Housing supply is fixed. Because $\omega \sim U[\underline{\omega}, \bar{\omega}]$, the increase in $\underline{\omega}$ leads to an increase in the density of higher skilled workers $\bar{\omega}$. Therefore, rents at the center of the city increase, and the utility of $\bar{\omega}$ decreases. Notice that rents at the edge of the city $r(\bar{\tau})$ are still pinned down by the boundary conditions so $r(\bar{\tau}) = 0$, unchanged.
+    \\
+    Formally, from 3, we have
+    \begin{align*}
+        U(\tau=0, \bar{\omega}) &= d_1 \bar{\omega} g \underbrace{- d_2 g [\bar{\omega}\bar{\tau} - \underbrace{(\bar{\omega} - \underline{\omega})}_{\downarrow} \frac{\pi}{3 L} (\bar{\tau}^3 - \tau^3))]}_{\downarrow}
+    \end{align*}
+        
+  
+
+    \bigskip
+    \item \textit{What happens to the equilibrium utility of $\underline{\omega}$ if the value of $\bar{\omega}$ increases? (skill dilation)} \\
+    In the case of skill dilation, the equilibrium utility of $\underline{\omega}$
+    \\
+    \\
+    Similarly, because of the uniform distribution of skills $\omega$, an increase in $\bar{\omega}$ decreases the density of low skilled workers. However, because the city edge does not change, and the boundary condition is still valid, it must still be the case that rents at the city edge are $0$. Therefore the equilibrium utility of $\underline{\omega}$ is unchanged.
+    \\
+    Formally, from 3, we have
+    \begin{align*}
+        U(\underline{\omega}, \bar{\tau}) &= (d_1 - d_2) \underline{\omega} g
+    \end{align*}
+    Which doesn't depend on $\bar{\omega}$
+\end{enumerate}
+
+
+\end{document}

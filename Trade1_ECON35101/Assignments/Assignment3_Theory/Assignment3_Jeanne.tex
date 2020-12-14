@@ -1,0 +1,241 @@
+\documentclass[10pt, final]{article}
+%\usepackage[document]{ragged2e}
+\usepackage[utf8]{inputenc}
+
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+ 
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Assignment 3 - Jeanne Sorin}
+\cfoot{\thepage}
+
+\usepackage{multirow}
+\usepackage{hyperref}
+
+\usepackage{soul}
+
+\usepackage{enumerate}
+\usepackage{amssymb}
+\usepackage{amsmath, mathtools}
+\usepackage{amsopn}
+\usepackage{amsthm}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{amsfonts}
+\usepackage[makeroom]{cancel}
+% \usepackage{wasysym}
+\usepackage[paperwidth=8.5in,left=1in,right=1in,paperheight=11.0in,top=1in, bottom=1in]{geometry}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings}
+
+\usepackage{pgfplots}
+
+\pgfplotsset{compat = 1.15}
+%\pgfplotsset{scaled y ticks=false}
+\usetikzlibrary{positioning}
+\usepackage{mathtools}
+
+\usepackage{listings}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\detr}{det}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\Real}{Re}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\argmax}{argmax}
+\DeclareMathOperator{\vect}{vec}
+
+
+% Additional commands/shortcuts to make our life easier
+\newcommand{\bm}{\begin{bmatrix}}
+\newcommand{\fm}{\end{bmatrix}}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\D{\Delta}
+\def\d{\delta}
+\def\z{\zeta}
+\def\k{\kappa}
+\def\l{\lambda}
+\def\n{\nu}
+\def\e{\varepsilon}
+\def\r{\rho}
+\def\s{\sigma}
+\def\S{\Sigma}
+\def\t{\tau}
+\def\x{\xi}
+\def\w{\omega}
+\def\W{\Omega}
+\def\th{\theta}
+\def\p{\phi}
+\def\P{\Phi}
+\newcommand{\pa}{\mathcal \partial}
+\newcommand{\No}{\mathcal N}
+\def\munderbar#1{\underline{\sbox\tw@{$#1$}\dp\tw@\z@\box\tw@}}
+
+
+\title{Assignment 3}
+\author{Jeanne Sorin\footnote{I am thankful to Chase Abram, Tom Hierons and Camilla Schneier for fruitful discussions.}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newcommand{\hatxi}{\hat{\mathbf{x}}^i}
+\newcommand{\tildexi}{\tilde{\mathbf{x}}^i}
+
+
+\maketitle
+
+\section{Urban Theory} % (fold)
+\label{sec:urban_theory}
+\textit{In Henderson (1974) there are a continuum of equilibria. In Behrens, Duranton, Robert-Nicoud (2014), Proposition 4 says there is a unique talent-homogeneous equilibrium. Is Proposition 4 correct? If it is correct, very clearly explain why talent heterogeneity makes the equilibrium unique when the homogeneous-worker case in Henderson (1974) yields multiple equilibria. If it is incorrect, identify the error and state the correct claim.}
+\\
+\\
+Let's first discuss the conceptual differences between the Henderson and the BDRN models in a couple sentences, before digging into Proposition 4 and show why it is not correct.
+\\
+\\
+
+The Henderson (1974) model is one with tradable goods, IRS at the industry level and trade costs between cities (concentration forces), together with commuting costs within a city increasing with city size (dispersion force). Agents are homogenous in their skills and tastes. In the general case where economies of scales are different across industries, with cities specializing in a unique industry (economies of scale are only within industry), city sizes will differ, as different wages will be able to support different costs of living and levels of commuting.
+
+In Addition to the agglomeration and dispersion forces from Henderson (1974), BDRN (2014) introduces heterogeneous agents, leading to selection and ability sorting across cities. The resulting model is much more realistic.
+\\
+\\
+
+However, Proposition 4 from BDRN has two potential flaws. 
+First, let's remind Proposition 4: \\
+\\
+\textbf{Proposition 4 (Equilibrium population of talent-homogeneous cities)} states that: \textit{If $\frac{\gamma}{\epsilon}$ is close to unity\footnote{With $\gamma > \epsilon$ from earlier.}, the talent-homogeneous equilibrium is unique and such that
+\begin{align*}
+    L(t) &= (\frac{1 + \gamma}{1 + \epsilon} \zeta t^{1+a})^{1/(\gamma - \epsilon)}
+\end{align*}
+Where
+\begin{align*}
+    \zeta &\equiv \frac{(\epsilon \sigma)^{1+ \epsilon} S^{1+a}}{\gamma \theta}
+\end{align*}
+Equilibrium city population increases with city talent t, agglomeration economies $\epsilon$, and worker heterogeneity $a$ and decreases with urban costs $\theta$ and $\gamma$.
+}
+\\
+Assuming heterogeneous talents, and production heterogeneity (even though it is not written directly in the proposition, this is at the core of the paper), we can look into the proof of the Proposition shows us where the problems are: \\
+First, we see that the ODE potentially has multiple solutions and that nothing in the paper really allows to pin it down:
+\\
+From the household constrained optimization problem
+\begin{align*}
+    \frac{\pa \mathbb{E} V(t',t)}{\pa L}|_{t'=t} dL + \frac{\pa \mathbb{E} V(t', t)}{\pa t}|_{t'=t} dt = 0
+\end{align*}
+Plugging in for $frac{\pa \mathbb{E} V(t',t)}{\pa L}$ and $\frac{\pa \mathbb{E} V(t', t)}{\pa t}$
+\begin{align*}
+    [(\epsilon \sigma)^{1+\epsilon} (St)^{1+a} L^\epsilon - \theta \gamma L^{\gamma}]\frac{d L(t)}{L} + \frac{1+a}{1+\epsilon}(\epsilon \sigma)^{1+\epsilon} (St)^{1+a} L^\epsilon \frac{d t}{t} &= 0
+\end{align*} 
+Simplifying
+\begin{align*}
+    \gamma \theta L^{\epsilon}[\frac{\zeta t^{1+a} - L^{\gamma-\epsilon}}{L} d L(t) + \frac{1+a}{1+\epsilon} \zeta t^a dt] &= 0
+\end{align*}
+Solving the ODE from Mathematica
+\begin{align*}
+    \zeta t^{1+a} L(t)^{1+\epsilon} - \frac{1+\epsilon}{1+\gamma} L(t)^{1+\gamma} &= \text{constant}
+\end{align*}
+BDRN choose $constant = 0$, but there is no reason this is the only solution. Thus, their result is valid up to a constant. I believe their constant choice was driven by $L(0) = 0$, but it would have benefited from some explanation.\\
+While I see that the choice of the constant has implications when one wants to quantitatively pin down the equlibrium, I am unclear whether it matters for more qualitative (ordering) results.
+\\
+
+Second, note that $z$ is defined incorrectly in the paper:\\
+From equation (23)
+\begin{align*}
+    \frac{d \ln L(t)}{d \ln t} &= \frac{\frac{1 + a}{1+\epsilon}}{\frac{L(t)^{\gamma-\epsilon}}{\zeta t ^{a+1}} -1 }
+\end{align*}
+From their guess that $L(t) = (z \eta t^{1+a})^{1/(\gamma-\epsilon)}$:
+\begin{align*}
+    \frac{d \ln L(t)}{d ln t} &= \frac{1+a}{\gamma-\epsilon}
+\end{align*}
+Setting the two equal to each other and solving for $z$
+\begin{align*}
+    \frac{\frac{1 + a}{1+\epsilon}}{\frac{L(t)^{\gamma-\epsilon}}{\zeta t ^{a+1}} -1 } &= \frac{1+a}{\gamma-\epsilon} \\
+    \underbrace{\frac{L(t)^{\gamma-\epsilon}}{\zeta t ^{a+1}}}_{z} -1 &= \frac{\gamma-\epsilon}{1+\epsilon} \\
+    z &= \frac{1 + \gamma}{1 + \epsilon}
+\end{align*}
+Which is different than the solution to the ODE
+\begin{align*}
+    z &= [\frac{(\gamma - \epsilon)(1+a)}{1+\epsilon} + 1]^{\frac{1}{\gamma-\epsilon}}
+\end{align*}
+
+
+
+Besides, while this is not problematic for the proof per se, one of their result is hard for me to rationalize: from the condition $\gamma \approx \epsilon$: 
+\begin{align*}
+    L(t) &= (\frac{1 + \gamma}{1 + \epsilon} \zeta t^{1+a})^{1/(\gamma - \epsilon)} \\
+    \ln L(t) &= \frac{1}{\gamma - \epsilon} \ln(\frac{1+\gamma}{1+\epsilon}) + \frac{1}{\gamma - \epsilon} \ln(\zeta) + \frac{1+\alpha}{\gamma - \epsilon} ln(t)
+\end{align*}
+Taking the derivative of the log wrt $t$ (i.e. the elasticity)
+\begin{align*}
+    \frac{d \ln L(t)}{d \ln t} &= \frac{1+\alpha}{\gamma - \epsilon}
+\end{align*}
+Because $\gamma \approx \epsilon$:
+\begin{align*}
+    \frac{d \ln L(t)}{d \ln t} &\to \infty & \text{if } \gamma > \epsilon
+\end{align*}
+It is hard for me to rationalize how this conclusion is not problematic: we never observe a city's population going to $\infty$ over time.
+\\
+\\
+Finally, we can modify Proposition 4 so that it is correct by adding : \textit{"imposing that $L(0) = 0$"}
+
+
+
+
+\newpage
+
+\section{Trade and Urban Theory} % (fold)
+\label{sec:trade_and_urban_theory}
+
+\textit{Look at Behrens \& Robert-Nicoud's "Agglomeration Theory with Heterogeneous Agents" chapter in the Handbook of Urban and Regional Economics. On page 204, they propose a theory of metropolitan specialization in which different cities are home to different industries. What is their prediction? How can this be investigated empirically? What is the role of comparative advantage? Is comparative advantage sufficient for the existence of a specialized equilibrium?}
+\\
+\\
+Section 4.3.3.1 is about \textbf{Industry composition}. Consider an economy with I different industry, $p_i$ the price of good $i$ (freely traded) and $Y_i$ the corresponding physical quantity. \\
+Value of $i$ in city $c$
+\begin{align*}
+    p_i Y_i &= p_i \mathbb{J}_c \mathbb{U}_c \mathbb{L}_{ic} \mathbb{A}_{ic} L_{ic}
+\end{align*}
+With 
+\begin{itemize}
+    \item $\mathbb{L}_{ic}$ the extent of localization economies (external economies of scale, within industry)
+    \item $\mathbb{U}_c$ the extent of urbanization economies (local employment, whatever industry,'s contribution to external scale economies)
+    \item $\mathbb{J}_c$ the external effects of industry diversity
+\end{itemize}
+In equilibrium all workers in city $c$ receive the same wage  $w = p_i \mathbb{J}_c \mathbb{U}_c \mathbb{L}_{ic} \mathbb{A}_{ic}$ and same level of utility in all populated cities.
+\\
+\\
+Besides, the utility of an agent working in industry $i$ in city $c$ is
+\begin{align*}
+    u_{ic} &= (\frac{\gamma}{\epsilon_i} - 1) \times (p_i \frac{\epsilon_i}{\gamma} \mathbb{A}_{ic})^{\gamma / (\gamma - \epsilon_i)}
+\end{align*}
+\\
+\\
+Their prediction is that if there is no external effect of industry diversity ($\mathbb{J}_c = 1, \forall c$), if there is no urbanization economies ($\mathbb{U}_c = 1, \forall c$), \textbf{if there is no free migration}, and if the productivity is \textbf{not }the same across sites ($\mathbb{A}_{i,c} \neq \mathbb{A}_{i,c'}, \forall c,c'$) then there is a unique equilibrium with each city specializing in a given industry, according to their comparative advantage (thanks to a smart local government maximizing $u_{ic}$ by choosing industry $i$.
+City $c$ will specialize in good $i$ and city $d$ in good $j$ if (in the case where $\epsilon_i = \epsilon$)
+\begin{align*}
+    \frac{A_{cj}}{A_{ci}} < \frac{p_i}{p_j} < \frac{A_{dj}}{A_{di}} 
+\end{align*}
+This is a version of Ricardian Comparative Advantage at the city level.
+\\
+\\
+Notice that comparative advantage is \textbf{not} sufficient for the existence of a specialized equilibrium: first and foremost, we need heterogeneous workers and industries (leading to positive assortative matching, together with supermodularity (complementarity between city size and productivity). \textbf{Besides, for the above to hold, we shut down cross-industry externalities, and free worker migration}. The authors note that activating the two mechanisms mentioned above may lead to a failure in (log-)supermodularity and the resulting unique regular assignment of industries to cities.
+\\
+The comparative advantage (or more generally log-supermodularity) result holds when assuming workers can't freely move across cities, or, in other words, we don't impose $u_{l,c} = u_{l, d}$, for worker $l$ in cities $c$ and $d$. If we are to relax this assumption, then, as mentioned before, supermodularity may break and comparative advantage is not strong enough. Absolute advantage could do the trick, but this is a much more restrictive condition, as for an equilibrium, in the case of the 2 cities, we would need $A_{i,c} > A_{i, d}$ and $A_{j,c} < A_{j,d}$, which is not necessarily consistent with bigger cities being more productive at everything.
+\\
+\\
+With regards to how to investigate this in the data: it is hard. As we're starting to get a sense of, it is really hard to measure TFP and productivity. Besides, comparative advantage requires us to take a stand on counterfactual, unobserved, technologies that cities / industries do \textbf{not} have a comparative advantage in.
+\\
+Making additional assumptions like supermodularity in technology and city size could allow us to rank productivity according to city size, and use the latter as a proxy for the former. Following Davis and Dingel (2014), we could check supermodularity by regressing city size on productivity / skills. They find that larger cities indeed specialize in skill-intensive industries and host more skilled workers.
+\\
+Moreover, agglomeration economies can be empirically investigated as in Ellison et al. (2010): assuming that observed agglomerations are efficient (quite a strong assumption when we put in perspective the paper's remark that in the presence of free migration, coagglomerations are often inefficients), they recover coagglomeration economies from observed prices.
+\\
+Finally, taking one step back, we could also check whether $u_{ic} = u_{id}$: if this doesn't hold, this would suggest that there is no free mobility, and that the point made about comparative advantage is relevant. Of course, this assumes that we can obtain a valid measure of welfare that we can compare across individuals...
+
+
+\end{document}

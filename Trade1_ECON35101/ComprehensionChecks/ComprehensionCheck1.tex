@@ -1,0 +1,168 @@
+\documentclass[10pt, final]{article}
+%\usepackage[document]{ragged2e}
+\usepackage[utf8]{inputenc}
+
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+ 
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Comprehension Check 1}
+\cfoot{\thepage}
+
+\usepackage{multirow}
+\usepackage{hyperref}
+
+\usepackage{soul}
+
+\usepackage{enumerate}
+\usepackage{amssymb}
+\usepackage{amsmath, mathtools}
+\usepackage{amsopn}
+\usepackage{amsthm}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{amsfonts}
+\usepackage[makeroom]{cancel}
+% \usepackage{wasysym}
+\usepackage[paperwidth=8.5in,left=1in,right=1in,paperheight=11.0in,top=1in, bottom=1in]{geometry}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings}
+
+\usepackage{pgfplots}
+
+\pgfplotsset{compat = 1.15}
+%\pgfplotsset{scaled y ticks=false}
+\usetikzlibrary{positioning}
+\usepackage{mathtools}
+
+\usepackage{listings}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\detr}{det}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\Real}{Re}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\argmax}{argmax}
+\DeclareMathOperator{\vect}{vec}
+
+
+% Additional commands/shortcuts to make our life easier
+\newcommand{\bm}{\begin{bmatrix}}
+\newcommand{\fm}{\end{bmatrix}}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\D{\Delta}
+\def\d{\delta}
+\def\z{\zeta}
+\def\k{\kappa}
+\def\l{\lambda}
+\def\n{\nu}
+\def\e{\varepsilon}
+\def\r{\rho}
+\def\s{\sigma}
+\def\S{\Sigma}
+\def\t{\tau}
+\def\x{\xi}
+\def\w{\omega}
+\def\W{\Omega}
+\def\th{\theta}
+\def\p{\phi}
+\def\P{\Phi}
+\newcommand{\pa}{\mathcal \partial}
+\newcommand{\No}{\mathcal N}
+
+
+
+\newcommand{\hatxi}{\hat{\mathbf{x}}^i}
+\newcommand{\tildexi}{\tilde{\mathbf{x}}^i}
+
+
+
+\title{Comprehension Check 1: Immiserizing growth in the Armington Model}
+\author{Jeanne Sorin}
+\date{\today}
+
+
+
+\begin{document}
+
+\maketitle
+
+\textit{In week 3, we briefly introduced the Armington model with CES preferences as the simplest "Ricardian" model delivering a gravity equation. A full introduction is presented in Section 2.1 of Costinot and Rodriguez-Clare (Handbook, 2014). 
+\\
+For this comprehension check, please deliver response to the three queries below. All can be shown analytically without resorting to numerical computation. Please submit your PDF via Canvas.}
+
+\section{Free-Trade Equilibrium} % (fold)
+\label{sec:free_trade_equilibrium}
+
+\textit{Assume balanced budgets (Y = X) and free trade ($\tau=1$ for all i,j). The only endogenous variables are incomes. Solve the model. Show that the equilibrium income levels take the form $Y = Q^{\epsilon /(\epsilon+1)}$. What is the value of $\epsilon$ in this Armington model?}
+\\
+\\
+From the Armington model with $\tau = 1$ we have on the demand side
+\begin{align*}
+	X_{ij} &= \frac{p_i^{1-\s}}{\sum_l (p_l)^{1-\s}} X_j
+\end{align*}
+Combining the above with the supply side $Y_i = p_i \cdot Q_i$ with $Q_i$ exogenous, together with imposing balanced budgets $X_i = Y_i, \forall i$ we obtain
+\begin{align*}
+	X_{ij} &= \frac{(\frac{Y_i}{Q_i})^{1-\s}}{\sum_l (\frac{Y_l}{Q_l})^{1-\s}} X_j
+\end{align*}
+Summing over j and using the fact that $\sum_j X_{ij} = Y_i$
+\begin{align*}
+	Y_i &= \frac{(\frac{Y_i}{Q_i})^{1-\s}}{\sum_l (\frac{Y_l}{Q_l})^{1-\s}} \sum_j X_j \\
+	Y_i^{\s} &= (Q_i)^{\s-1}\frac{\sum_j X_j}{\sum_l (\frac{Y_l}{Q_l})^{1-\s}}  \\
+	Y_i &= (Q_i)^{\frac{\s-1}{\s}}\frac{\sum_j X_j}{\sum_l (\frac{Y_l}{Q_l})^{1-\s}}, \forall i \\
+	Y_i &= (Q_i)^{\frac{\s-1}{\s}} \phi, \forall i 
+\end{align*}
+Where $\phi = \frac{\sum_j X_j}{\sum_l (\frac{Y_l}{Q_l})^{1-\s}}$ doesn't depend on i. Because $(\frac{Y_l}{Q_l})^{1-\s} = p_l^{1-\s}$, we remember that only relative prices matter and, as a result, we can normalize $p_l^{1-\s}$ for some $l$ such that $\phi = 1$. We obtain the desired result
+\begin{align*}
+	Y_i &= Q_i^{\frac{\s-1}{\s}} = Q_i^{\frac{\e}{1+\e}}
+\end{align*}
+where $\e = \s - 1$
+
+\section{Welfare} % (fold)
+\label{sec:welfare}
+
+\textit{A country's real income is $Y/P$, where P is the CES price index. Derive an expression for real income in the free-trade equilibrium that depends only on exogenous parameters.}
+\\
+\\
+Plugging in $Y_i = Q_i^{\frac{\e}{1+\e}}$ and $P= (\sum_l p_l^{1-\s})^{\frac{1}{1-\s}} = (\sum_l p_l^{-\e})^{\frac{-1}{\e}}$ the CES price index, constant across country because $\tau_{ij} = 1, \forall i, j$
+\begin{align*}
+	\frac{Y_i}{P_i} &= \frac{Q_i^{\frac{\e}{1+\e}}}{(\sum_l p_l^{-\e})^{\frac{-1}{\e}}}
+\end{align*}
+Plugging in for $ p_l = \frac{Y_l}{Q_l} = \frac{Q_l^{\frac{\e}{1+\e}}}{Q_l} = Q_l^{\frac{-1}{1+\e}}$
+\begin{align*}
+	\frac{Y_i}{P_i} &= \frac{Q_i^{\frac{\e}{1+\e}}}{(\sum_l Q_l^{\frac{\e}{1+\e}})^{\frac{-1}{\e}}}
+\end{align*}
+Which is only a function of exogenous parameters.
+
+
+\section{Immiserizing Growth} % (fold)
+\label{sec:immiserizing_growth}
+
+\textit{Suppose that one country experiences productivity growth (an increase in its $Q$). Can a country's productivity improvement be immiserizing? That is, can a productivity improvement reduce its real income? Answer this question for the case of the free-trade Armington model. See Feenstra's textbook chapter titled "Trade and Endogenous Growth" for an explanation of immiserizing growth.}
+\\
+\\
+We look at $\frac{\pa Y_i / P_i}{Q_i}$
+
+\begin{align*}
+	\frac{Y_i}{P_i} &= \frac{Q_i^{\frac{\e}{1+\e}}}{(\sum_l Q_l^{\frac{\e}{1+\e}})^{\frac{-1}{\e}}} \\
+	\frac{\pa Y_i / P_i}{Q_i} &= \frac{\frac{\e}{1 + \e} Q_i^{\frac{-1}{1+\e}} \alpha^{-\frac{1}{\e}} - \frac{-1}{\e} \frac{\e}{1+\e} Q_i^{\frac{-1}{1+\e}} \a^{-\frac{1+\e}{\e}} Q_i^{\frac{\e}{1+\e}}}{\a^{-\frac{2}{\e}}} \\
+	\frac{\pa Y_i / P_i}{Q_i} &= \frac{\frac{\e}{1 + \e} Q_i^{\frac{-1}{1+\e}} \alpha^{-\frac{1}{\e}} + \frac{1}{1+\e} Q_i^{\frac{\e-1}{1+\e}} \a^{-\frac{1+\e}{\e}}}{\a^{-\frac{2}{\e}}} > 0 \text{ as long as } \e > 0 \leftrightarrow \s > 1 
+\end{align*}
+with $\a = \sum_l Q_l^{\frac{\e}{1+\e}} > 0$. 
+\\
+\\
+As $\s > 1$ is one of the assumptions of the Armington, we conclude that in the Armington model it is not possible to have immiserizing growth.
+\\
+\\
+On a side note, let's emphasize that $\sigma < 1$ is imposed in order to rule out complementarity between different goods $z$, which, in a trade context, would mean complementarity in international goods. I haven't tried to go down the math on this, but intuititvely, this would prevent us from using DFS as such, as we would need to think harder how to add other countries, monopolistic competition, or features like increasing returns to scale.
+
+
+\end{document}

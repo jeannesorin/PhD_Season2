@@ -1,0 +1,27 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Table 2}
+\begin{tabular}{l*{8}{c}}
+\hline\hline
+                    &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}&\multicolumn{1}{c}{(7)}&\multicolumn{1}{c}{(8)}\\
+                    &\multicolumn{1}{c}{lflow}&\multicolumn{1}{c}{log(flow+1)}&\multicolumn{1}{c}{log(flow+1)}&\multicolumn{1}{c}{flow}&\multicolumn{1}{c}{flow}&\multicolumn{1}{c}{flow}&\multicolumn{1}{c}{flow}&\multicolumn{1}{c}{flow}\\
+\hline
+1 for contiguity    &       0.971\sym{***}&       1.017\sym{***}&       1.118\sym{***}&       0.462			&       0.462\sym{***}&       1.118\sym{***}&       0.462\sym{***}&       0.464\sym{***}\\
+                    &    (0.0617)         &    (0.0343)         &    (0.0320)         &    (.)         		&    (0.0377)         &    (0.0320)         &    (0.0377)         &    (0.0376)         \\
+[1em]
+Common 1st Language &       0.975\sym{***}&       0.470\sym{***}&       0.433\sym{***}&       0.212			&       0.212\sym{***}&       0.433\sym{***}&       0.212\sym{***}&       0.211\sym{***}\\
+                    &    (0.0286)         &    (0.0159)         &    (0.0132)         &    (.)       		&    (0.0358)         &    (0.0132)         &    (0.0358)         &    (0.0357)         \\
+[1em]
+ldistw              &      -1.704\sym{***}&      -1.069\sym{***}&      -0.890\sym{***}&      -0.899			&      -0.899\sym{***}&      -0.890\sym{***}&      -0.899\sym{***}&      -0.899\sym{***}\\
+                    &    (0.0136)         &   (0.00756)         &   (0.00652)         &   (.)        		&    (0.0157)         &   (0.00652)         &    (0.0157)         &    (0.0157)         \\
+\hline
+N                   &       67350         &       67350         &       91652         &       91685         &       91652         &       91685         &       91652         &       67350         \\
+R2                  &       0.718         &       0.758         &       0.742         &       0.907         &                     &       0.907         &                     &                     \\
+Command             &         reg         &         reg         &         reg         &       ppml          &         poi2hdfe    &    ppml\_panel\_sg    &    ppmlhdfe         &    ppmlhdfe         \\
+Flow $>$ than 0 only&         Yes         &         Yes         &          No         &       No            &         No          &        No           &          No         &         Yes         \\
+Time (sec)          &        .894         &        .848         &       1.061         &       2178.349      &      23.092         &        456.983      &       7.291         &       4.488         \\
+\hline\hline
+\multicolumn{9}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{9}{l}{\footnotesize \sym{*} \(p<0.10\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+\end{tabular}
+\end{table}

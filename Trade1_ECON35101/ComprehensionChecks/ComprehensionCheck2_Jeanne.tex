@@ -1,0 +1,217 @@
+\documentclass[10pt, final]{article}
+%\usepackage[document]{ragged2e}
+\usepackage[utf8]{inputenc}
+
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+ 
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Comprehension Check 2}
+\cfoot{\thepage}
+
+\usepackage{multirow}
+\usepackage{hyperref}
+
+\usepackage{soul}
+
+\usepackage{enumerate}
+\usepackage{amssymb}
+\usepackage{amsmath, mathtools}
+\usepackage{amsopn}
+\usepackage{amsthm}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{amsfonts}
+\usepackage[makeroom]{cancel}
+% \usepackage{wasysym}
+\usepackage[paperwidth=8.5in,left=1in,right=1in,paperheight=11.0in,top=1in, bottom=1in]{geometry}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings}
+
+\usepackage{pgfplots}
+
+\pgfplotsset{compat = 1.15}
+%\pgfplotsset{scaled y ticks=false}
+\usetikzlibrary{positioning}
+\usepackage{mathtools}
+
+\usepackage{listings}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\detr}{det}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\Real}{Re}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\argmax}{argmax}
+\DeclareMathOperator{\vect}{vec}
+
+
+% Additional commands/shortcuts to make our life easier
+\newcommand{\bm}{\begin{bmatrix}}
+\newcommand{\fm}{\end{bmatrix}}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\D{\Delta}
+\def\d{\delta}
+\def\z{\zeta}
+\def\k{\kappa}
+\def\l{\lambda}
+\def\n{\nu}
+\def\e{\varepsilon}
+\def\r{\rho}
+\def\s{\sigma}
+\def\S{\Sigma}
+\def\t{\tau}
+\def\x{\xi}
+\def\w{\omega}
+\def\W{\Omega}
+\def\th{\theta}
+\def\p{\phi}
+\def\P{\Phi}
+\newcommand{\pa}{\mathcal \partial}
+\newcommand{\No}{\mathcal N}
+
+
+
+\newcommand{\hatxi}{\hat{\mathbf{x}}^i}
+\newcommand{\tildexi}{\tilde{\mathbf{x}}^i}
+
+
+
+\title{Comprehension Check 2: Productivity in the Melitz (2003) model}
+\author{Jeanne Sorin\footnote{I am thankful to Chase Abram and Tom Hierons for insightful discussions and comments.}}
+\date{\today}
+
+
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}[1.]
+	\item \textit{Based on the primitives in section 2 of Melitz (2003), compute quantity per worker and revenue per worker for an active firm with productivity $\phi$}
+	\\
+	The production function is
+	\begin{align*}
+		l &= f + \frac{q(\phi)}{\phi}
+	\end{align*}
+	Therefore
+	\begin{align*}
+		\frac{q(\phi)}{l(\phi)} &= \frac{q(\phi)}{f + \frac{q(\phi)}{\phi}} \\
+		&= \frac{Q[\rho P \phi]^{\sigma}}{f + Q [\rho P]^{\sigma}\phi^{\sigma-1}} &\text{using (3) into (2)} \\
+		&= \frac{Q[\rho P]^{\sigma}}{\frac{f}{\phi^{\sigma}} + Q [\rho P]^{\sigma}\phi^{-1}}
+	\end{align*}
+	Similarly for 
+\begin{align*}
+	\frac{r(\phi)}{l(\phi)} &= \frac{R [\rho P \phi]^{\sigma-1}}{f + Q[\rho P]^{\sigma}\phi^{\sigma-1}}
+\end{align*}
+
+	\item \textit{Footnote 7 in Melitz (2003) says "Higher productivity may also be thought of as producing a higher quality variety at equal cost." Answer the questions posed in the accompanying PDF.}
+
+	The utility function is
+	\begin{align*}
+		U &= \left[\int_{\omega\in\Omega} \varphi(\omega)^{\epsilon} q(\omega)^{\rho}\textrm{d}\omega\right]^{1/\rho}
+	\end{align*}
+	And the price index, by definition is 
+	\begin{align*}
+		P &= \int_0^{n}p(\omega) q(\omega) d\omega
+	\end{align*}
+	WTS:
+	\begin{align*}
+		P &= \left[ \int_{\omega\in\Omega} \varphi(\omega)^{\epsilon\sigma} p(\omega)^{1-\sigma} \textrm{d} \omega \right]^{\frac{1}{1-\sigma}}
+	\end{align*}
+	To do so, we find the Marshallian demand functions $q(\omega)$ as a function of $p(\omega)$ and $\varphi(\omega)$. More precisely, we solve the household's maximization problem using a Lagrangian. We notice that maximizing $U$ is equivalent to maximizing $U^\rho$, which is quite convenient as it makes algebra (much) easier :
+	\begin{align*}
+		L &= U^\rho - \lambda[\int_0^{n}p(\omega) q(\omega) d\omega - R]
+	\end{align*}
+	where R is the total household's expenses. Taking the FOC wrt $q(\omega_1)$ and $q(\omega_2)$ and their ratio
+	\begin{align*}
+		\rho q(\omega)^{\rho -1} \varphi(\omega)^\epsilon &= \lambda p(\omega) \\
+		(\frac{q(\omega_1)}{\omega_2})^{\rho - 1} &= \frac{p(\omega_1)}{p(\omega_2)} (\frac{\varphi(\omega_2)}{\varphi(\omega_1)})^{\epsilon}
+	\end{align*}
+	Rearranging, multiplying by $p(\omega_1)$ and integrating wrt $\omega_1$
+	\begin{align*}
+		p(\omega_1) q(\omega_1) &= q(\omega_2) \frac{p(\omega_2)^\sigma \varphi(\omega_2)^{\epsilon \sigma}}{p(\omega_1)^(\sigma-1) \varphi(\omega_1)^{-\epsilon \sigma}} \\
+		\int_{\omega_1} p(\omega_1) q(\omega_1) d \omega_1 &= q(\omega_2) p(\omega_2)^\sigma \varphi(\omega_2)^{\epsilon \sigma} \int_{\omega_1} p(\omega_1)^{1-\sigma} \varphi(\omega_1)^{\epsilon \sigma} d \omega_1
+	\end{align*}
+	Noticing that the LHS = $R$, rearranging and solving for $q(\omega_2)$
+	\begin{align*}
+		q(\omega_2) &= \frac{\varphi(\omega_2)^{\epsilon \sigma}}{p(\omega_2)^\sigma} R [\int_{\omega_1} p(\omega_1)^{1-\sigma} \varphi(\omega_1)^{\epsilon \sigma} d \omega_1]^{-1}
+	\end{align*}
+	Because P, the price index, is the true cost of living, it must be the case that $U = \frac{R}{P}$. Thus, plugging in for $q(\omega_2)$ into the definition of U, and using this equality, we get (using $\rho = \frac{\sigma - 1}{\sigma}$)
+	\begin{align*}
+		U &= \frac{R}{P} = \left[\int_{\omega\in\Omega} \varphi(\omega)^{\epsilon} [\frac{\varphi(\omega)^{\epsilon \sigma}}{p(\omega)^\sigma} \frac{R}{\int_{\omega_1} p(\omega_1)^{1-\sigma} \varphi(\omega_1)^{\epsilon \sigma} d \omega_1}^{\rho}\textrm{d}\omega\right]^{1/\rho} \\
+		&= \frac{R}{P} = \frac{R}{\int_{\omega_1} p(\omega_1)^{1-\sigma} \varphi(\omega_1)^{\epsilon \sigma} d \omega_1} \left[\int_{\omega\in\Omega} \varphi(\omega)^{\epsilon \sigma} p(\omega)^{1-\sigma} \textrm{d}\omega\right]^{1/\rho} \\
+		&= \frac{R}{[\int_{\omega\in\Omega} \varphi(\omega)^{\epsilon \sigma} p(\omega)^{1-\sigma} \textrm{d}\omega]^{1 - \frac{1}{\rho}}} \\
+		&= \frac{R}{[\int_{\omega\in\Omega} \varphi(\omega)^{\epsilon \sigma} p(\omega)^{1-\sigma} \textrm{d}\omega] ^{\frac{1}{1-\sigma}}} \\
+		\Rightarrow P &= [\int_{\omega\in\Omega} \varphi(\omega)^{\epsilon \sigma} p(\omega)^{1-\sigma} \textrm{d}\omega] ^{\frac{1}{1-\sigma}}
+	\end{align*}
+	\\
+	\\
+	From our marshallian demand for $q(\omega)$ plugging in for the price index we have
+	\begin{align*}
+		q(\omega) &= \frac{\varphi(\omega)^{\epsilon \sigma}}{p(\omega)^\sigma} \frac{R}{P^{1-\sigma}}  \\
+		&= \varphi(\omega)^{\epsilon \sigma} [\frac{p(\omega)}{P}]^{-\sigma} \underbrace{\frac{R}{P}}_{Q} \\
+		&= \varphi^{\epsilon \sigma}(P \rho)^\sigma Q
+	\end{align*}
+	Similarly
+	\begin{align*}
+		r(\omega) &= p(\omega) q(\omega) =  \varphi(\omega)^{\epsilon \sigma} [\frac{p(\omega)}{P}]^{1-\sigma} R \\
+		&= \varphi^{\epsilon \sigma} [P \rho]^{\sigma-1} R
+	\end{align*}
+
+Finally we let the firm's production function be $l = f+q$.
+Using the fact that the pricing rule is now $p(\phi) = \frac{1}{\rho} = p$\footnote{We can verify that this pricing rule holds by solving the firm's maximization problem for a firm in monopolistic competition choosing $p(\phi)$ to maximize it's profits, with constant markup $= \frac{1}{\rho}$} as the marginal cost doesn't depend on $\phi$ anymore, we plug in for $p(\omega)$ into the expression above
+\begin{align*}
+	r(\phi) &= \phi^{\epsilon \sigma}(\rho P)^{\sigma-1}R
+\end{align*}
+And profits
+\begin{align*}
+	\pi(\phi) &= r(\phi) - l(\phi) = r(\phi) - f - q(\phi) \\
+	&= \phi^{\epsilon \sigma} [\rho P]^{\sigma} Q - \phi^{\epsilon \sigma}(\rho P)^{\sigma-1}R - f \\
+	&= \phi^{\epsilon \sigma} [\rho P]^{\sigma} Q - \frac{1}{\rho}\phi^{\epsilon \sigma}(\rho P)^{\sigma}Q - f \\
+	&= \phi^{\epsilon \sigma} [\rho P]^{\sigma} Q (1 - \frac{1}{\rho}) -  f \\
+	&= \phi^{\epsilon \sigma} [\rho P]^{\sigma} Q (\frac{1}{1-\sigma}) - f \\
+	&= \phi^{\epsilon \sigma} [\rho P]^{\sigma-1} \frac{R}{\sigma}  - f
+\end{align*}
+
+
+
+
+	\item \textit{For the quality variant of the model introduced in the previous question, compute quantity per worker and revenue per worker for an active firm with productivity $\phi$}
+	\\
+	We first need 
+	\begin{align*}
+		l(\phi) &= f + q(\phi) = f + \phi^{\epsilon \sigma} [\rho P]^{\sigma} Q
+	\end{align*}
+	Thus
+	\begin{align*}
+		\frac{q(\phi)}{l(\phi)} &= \frac{\phi^{\epsilon \sigma} [\rho P]^{\sigma} Q}{f + \phi^{\epsilon \sigma} [\rho P]^{\sigma} Q}
+	\end{align*}
+	and
+	\begin{align*}
+		\frac{r(\phi)}{l(\phi)} &= \frac{\phi^{\epsilon \sigma}(\rho P)^{\sigma-1}R}{f + \phi^{\epsilon \sigma} [\rho P]^{\sigma} Q}
+	\end{align*}
+
+
+
+	\item \textit{In Melitz (2003), footnote 7 says "Given the form of product differentiation, the modeling of either type of productivity difference is isomorphic." Comment on the isomorphism's implications for quantity per worker and revenue per worker.}
+\\
+\\
+\textit{"The modeling of either type of productivity difference is isomorphic"} implies that some of the equilibrium outcomes should be the same under both modeling. Comparing questions (1) and (3) we see that for $\frac{q(\phi)}{l(\phi)}$ to be equal across the two models, we would need both $\hat{\phi}^{\epsilon \sigma} = \tilde{\phi}^\sigma$ and $\hat{\phi}^{\epsilon \sigma} = \tilde{\phi}^{\sigma-1}$ where $\hat{\phi}$ corresponds to the quantity parameter parameter from Pr. Dingel's variant (Q3) and $\tilde{\phi}$ corresponds to the productivity parameter from Melitz (Q1).
+The above condition is only satisfied if under very restrictive conditions ($\phi$ constant and $=1$ would work, but this is not very interesting). 
+\\
+However, with regard to prices and revenues, from (1) and (3) we see that if $\hat{\phi} = \tilde{\phi}^{\frac{\sigma-1}{\epsilon \sigma}}$, then these outcomes are the same under the quantity and the quality variants. 
+\\
+Therefore, it seems that there is isomorphism in this model for the price / revenue variables, but not for the quantity ones. If one is interested in the quantity equilibrium, one should be careful about their modeling choice...
+\end{enumerate}
+
+
+\end{document}
