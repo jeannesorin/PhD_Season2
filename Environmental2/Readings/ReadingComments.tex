@@ -1,0 +1,196 @@
+\documentclass[12pt, final]{article}
+%\usepackage[document]{ragged2e}
+\usepackage[utf8]{inputenc}
+
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+ 
+
+\cfoot{\thepage}
+
+\maxdeadcycles=200
+
+\usepackage{multirow}
+\usepackage{hyperref}
+
+\usepackage{soul}
+\usepackage{caption}
+
+\usepackage{enumerate}
+\usepackage{amssymb}
+\usepackage{amsmath, mathtools}
+\usepackage{amsopn}
+\usepackage{amsthm}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{amsfonts}
+\usepackage[makeroom]{cancel}
+% \usepackage{wasysym}
+\usepackage[paperwidth=8.5in,left=1in,right=1in,paperheight=11.0in,top=1in, bottom=0.5in]{geometry}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings}
+
+\usepackage{pgfplots}
+
+\pgfplotsset{compat = 1.15}
+%\pgfplotsset{scaled y ticks=false}
+\usetikzlibrary{positioning}
+\usepackage{mathtools}
+
+\usepackage{listings}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\detr}{det}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\Real}{Re}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\argmax}{argmax}
+\DeclareMathOperator{\vect}{vec}
+
+
+% Additional commands/shortcuts to make our life easier
+\newcommand{\bm}{\begin{bmatrix}}
+\newcommand{\fm}{\end{bmatrix}}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\D{\Delta}
+\def\d{\delta}
+\def\z{\zeta}
+\def\k{\kappa}
+\def\l{\lambda}
+\def\n{\nu}
+\def\e{\varepsilon}
+\def\r{\rho}
+\def\s{\sigma}
+\def\S{\Sigma}
+\def\t{\tau}
+\def\x{\xi}
+\def\w{\omega}
+\def\W{\Omega}
+\def\th{\theta}
+\def\p{\phi}
+\def\P{\Phi}
+\newcommand{\pa}{\mathcal \partial}
+\newcommand{\No}{\mathcal N}
+
+\usepackage{lscape}
+
+\usepackage{graphicx}
+\graphicspath{ {./Regression_Graphs/} }
+
+\newcommand{\hatxi}{\hat{\mathbf{x}}^i}
+\newcommand{\tildexi}{\tilde{\mathbf{x}}^i}
+
+
+
+\title{Reading Comments - Environmental Economics II}
+\author{Jeanne Sorin}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{Hedonic Prices and Implicit Markets: Product Differentiation in Pure Competition, Rosen 1974} % (fold)
+\label{sec:hedonic_prices_and_implicit_markets_product_differentiation_in_pure_competition_rosen_}
+
+\subsubsection*{Summary} % (fold)
+\label{ssub:summary}
+
+This theoretical paper is the foundational paper on hedonic prices analysis, which is very popular in many economic fields, including in urban economics when the analysis is run on real estate prices.
+%
+Hedonic prices are ``\textit{implicit prices of attributes and are revealed to economic agents from observed prices of differentiated products and the specific amounts of characteristics associated with them}’’. Differentiated products are goods that can be fully described by their vector of characteristics.
+%
+The model at the basis of hedonic prices analysis is a model of competitive equilibrium, in a plane of as many dimensions as good characteristics $z = (z_1, z_2, …, z_n)$, where buyers and sellers meet. Prices $p(z)$ are functions off all zi characteristics.
+\\
+
+Consumers get utility from each zi characteristic, their utility function is strictly concave. The first order conditions of the utility maximization problem give $pi/px = (dU/dz)/(dU/dx)$. It is interesting to approach the problem by defining a bid function $\theta(z_1, …, z_n, u, y)$ where $u = U(y - \theta, z_1, …, z_n)$, which is the expenditure a consumer is willing to pay for an alternative z, given y and u and defines a series of indifference surfaces (equivalent to indifference curves in multiple dimensions). 
+One can show that only if the price function p(z) is convex, higher income consumers consume more of each good. However, in general, no such claim can be made. Besides, Rosen emphasizes that in general, once must impose a lot of structure for the problem to have a solution, and even more for it to have a closed-form solution.
+Very interestingly, the model predicts market segmentation in terms of tastes (value function), as in Tiebout’s (1956) implicit neighborhood market analysis. This suggests the potential role of hedonic analysis for spatial models. 
+
+Symmetrically, on the supply side, different firms have different cost functions, and therefore different offer functions $\phi(z_1, …, z_n, \pi, \beta)$, which is the unit price firms are willing to accept to produce an alternative z for a given profit $\pi$ and shift parameter $\beta$.
+\\
+
+The observed $p(z)$ is the market clearing price function, enveloping a family of value functions theta and offer functions $\phi$. The tangency of the value and offer functions lead to equilibrium, i.e. $Q_d(z) = Q_s(d)$ at $p(z)$.
+Rosen discusses several types of market equilibrium: short run equilibrium where z is fixed and only Q and p can change ; short run equilibrium where p is fixed and only Q and z can change; long-run equilibrium where Q, p and z can all change. In the latter case, $p(z)$ is only a function of supply, because it is determined by minimum average cost of z.
+\\
+
+In order to estimate the model, as the observed price is an equilibrium object such that the marginal demand price for zi is equal to the marginal supply price for zi, for all zi, and the price for each zi is not observed, one must run a two-step procedure. In a first step, p(z) is estimated using the usual hedonic method, and then compute the implicit marginal price $d p(z) / d zi$. In a second step, use the estimated implicit marginal price as the endogenous variable for each system of simultaneous equations (for each zi)
+
+Finally, Rosen discusses how this approach can be used to investigate the welfare consequences of quality-standard regulations.
+
+
+
+
+
+\subsubsection*{Criticisms and Questions} % (fold)
+\label{ssub:criticisms_and_questions}
+
+
+
+I do not understand the underlying reasoning behind ``\textit{also, as a general methodological point, it is demonstrated that conceptualizing the problem of product differentiation in terms of a few underlying characteristics instead of a large number of closely related generic goods leads to an analysis having much in common with the economics of spatial equilibrium and the theory of equalizing differences}’’.
+\\
+
+Besides, the role of arbitrage activities (p37) in forcing p(z) to be linear, is unclear to me. More precisely, I don’t understand why a linear price is problematic, as linear functions are both convex and concave. More generally, I would have appreciated more extensive discussion about the role of linearity vs nonlinearity. For example: how relevant empirically are linear vs nonlinear price functions? In which domain?
+\\
+
+Finally, having seen Rosen (1974) cited many times in urban / housing economic papers, I was expecting this paper to be more explicitly about hedonic analysis in the real estate market context, and found it quite striking how much more general it is.
+
+
+
+\newpage
+
+\section*{Does Hazardous Waste Matter? Evidence From The Housing Market And The Superfund Program, Greenstone \& Gallagher 2008} % (fold)
+\label{sec:does_hazardous_waste_matter_evidence_from_the_housing_market_and_the_superfund_program_greenstone_&_gallagher_2008}
+
+
+
+
+\subsubsection*{Summary} % (fold)
+\label{ssub:summary}
+
+This paper investigates whether individuals care about hazardous waste, and more precisely the extent to which the housing market appreciates in response to Superfund-sponsored cleanups of hazardous waste sites. This program, launched in 1985 by the Environmental Protection Agency (EPA), placed dangerous waste sites on a National Priorities List (NPL) so that they could be cleaned, starting in 2005. This program was controversial because of his cost and delays, and this paper moreover suggests that its welfare consequences were not substantial. The authors use the evolution of housing market outcomes as a proxy for the latter.
+\\
+
+The basis to estimate the value of local changes in environmental amenities is the hedonic model from Freeman (1974) and Rosen (1974), where a differentiated good (a house) is defined by a list of characteristics. The price of each of them equals the partial derivative of the good’s price with respect to the relevant characteristic in equilibrium. This model predicts that if inhabitants care about the cleanups, we should observe an increase in both supply and demand of housing, leading to an increase in both prices and quantity, as well as sorting of individuals caring relatively more about such environmental amenity into cleaned sites.
+\\
+
+However, successfully recovering individuals’ valuations of environmental amenities (e.g. clean air, clean ground etc) through a revealed preferences approach, like housing prices, is subject to many misspecification threats. In the case of the superfund program, a standard hedonic approach would suffer from a selection bias, as sites listed in the NPL are arguably not comparable to other sites. The balance test on all control vs treated census tracts fails, suggesting that a selection bias exists, which would bias the OLS estimates.
+In order to address this selection bias issue, the authors exploit the (known) selection criteria for sites to be added to the NPL, as well as the sequential selection of sites to be examined. In a first step, 14,697 sites were referred to the EPA to be examined. In a second step, 690 out of 14,697 sites were identified as very dangerous. Because of cost concerns, the EPA was then able to add only 400 of these 690 sites to the NPL. In order to make this selection, sites got assigned a Hazardous Ranking System (HRS) score from 0 to 100 depending on their toxicity and proximity to humans. Sites with a score above 28.5 made it to the NPL. 
+The existence of first a shortlist, and only then the calculation of the HRS and the resulting cutoff is the main lever of this paper, as it arguably provides a valid research design where the 690 sites are split at the cutoff. The 28.5 cutoff being only an imperfect predictor of treatment, it is used both as an instrument in a standard IV analysis (to account for potential endogenous rescoring), and in a quasi-experimental RD design. The balance test on census tracts surrounding sites with 1982 HRS scores is much more robust.
+These two approaches are compared to a conventional hedonic approach looking at the housing market of census tracts with sites in the NPL vs the housing market of other (surrounding) census tracts. The conventional approach relies on the assumption that unobserved determinants of housing prices are uncorrelated with NPL status.
+\\
+
+These analyses are run on a dataset containing (1) detailed information about 1,398 hazardous sites, (2) housing, demographic and economic panel from Geolytics’ Neighborhood Change Database at the Census tract level.
+Levels of analysis are (1) census tracts, (2) census tracts sharing a border with tracts containing a hazardous site and (3) land area within circles of different radii around these sites.
+\\
+
+According to the conventional approach (Table III), the cleanups led to a statistically significant increase in housing prices from 4.0 to 19.1\%. This holds both on the full census tract sample and on a sample restricted to NPL sites’ and neighboring census tracts. However, both the IV and the quasi-experimental RD designs (Table IV) lead to a different conclusion, as changes in housing prices after the cleanups are small and not statistically significant at conventional levels. The same conclusion is obtained from looking at rental rates rather than housing prices. With regards to both housing supply and sorting, the null hypothesis of a zero impact cannot be rejected. 
+
+The authors propose three potential explanations for these results. First, a low WTP for clean sites in by populations choosing to live near them both before and after the cleanups. Second, it could be the case that the population doesn’t believe that cleanups significantly improve the environmental amenity. Third, control units could have actually also been somewhat treated through remediation activities. The first two hypotheses are preferred by the authors.
+
+These findings are important from a policy perspective, as the cost of the cleanups is estimated at \$43 million which, if the housing market captures the full benefit of the program, can be considered as a “waste”.
+
+
+
+\subsubsection*{Criticisms and Questions} % (fold)
+\label{ssub:criticisms_and_questions}
+
+I really like how the paper introduces the empirical strategies addressing the issues brought by the conventional hedonic analysis. Estimating the latter, in addition to the main analysis, gives a lot of force to the alternative strategies, as the reader can see by himself how biased can the conventional approach be.
+
+However, I am not so convinced by the discussion on whether the housing market really encompasses all impact of the cleanup. From my understanding of the paper, this is equivalent to assuming that the housing supply curve is perfectly inelastic. Do we have any way to check this, maybe using Zillow ZTRAX data? 
+Without more evidence, I find it hard to make the claim that there was no welfare gain at all from the fact that the housing market didn't react. If, however, the cleanups have no effect on actual environmental amenities, as suggested on page 995, such claim is more convincing. Proving this no effect is beyond the scope of this paper.
+
+Finally, I am not sure to fully understand what exactly is the “control function” solution brought by RD compared to IV.
+
+
+
+\newpage
+
+
+\end{document}
