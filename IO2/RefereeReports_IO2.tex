@@ -1,0 +1,131 @@
+\documentclass[11pt, final]{article}
+%\usepackage[document]{ragged2e}
+\usepackage[utf8]{inputenc}
+
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+ 
+
+\cfoot{\thepage}
+
+\maxdeadcycles=200
+
+\usepackage{multirow}
+\usepackage{hyperref}
+
+\usepackage{soul}
+\usepackage{caption}
+
+\usepackage{enumerate}
+\usepackage{amssymb}
+\usepackage{amsmath, mathtools}
+\usepackage{amsopn}
+\usepackage{amsthm}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{amsfonts}
+\usepackage[makeroom]{cancel}
+% \usepackage{wasysym}
+\usepackage[paperwidth=8.5in,left=0.7in,right=0.7in,paperheight=11.0in,top=0.5in, bottom=0.5in]{geometry}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings}
+
+\usepackage{pgfplots}
+
+\pgfplotsset{compat = 1.15}
+%\pgfplotsset{scaled y ticks=false}
+\usetikzlibrary{positioning}
+\usepackage{mathtools}
+
+\usepackage{listings}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\detr}{det}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\Real}{Re}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\argmax}{argmax}
+\DeclareMathOperator{\vect}{vec}
+
+
+% Additional commands/shortcuts to make our life easier
+\newcommand{\bm}{\begin{bmatrix}}
+\newcommand{\fm}{\end{bmatrix}}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\D{\Delta}
+\def\d{\delta}
+\def\z{\zeta}
+\def\k{\kappa}
+\def\l{\lambda}
+\def\n{\nu}
+\def\e{\varepsilon}
+\def\r{\rho}
+\def\s{\sigma}
+\def\S{\Sigma}
+\def\t{\tau}
+\def\x{\xi}
+\def\w{\omega}
+\def\W{\Omega}
+\def\th{\theta}
+\def\p{\phi}
+\def\P{\Phi}
+\newcommand{\pa}{\mathcal \partial}
+\newcommand{\No}{\mathcal N}
+
+\usepackage{lscape}
+
+\usepackage{graphicx}
+\graphicspath{ {./Regression_Graphs/} }
+
+\newcommand{\hatxi}{\hat{\mathbf{x}}^i}
+\newcommand{\tildexi}{\tilde{\mathbf{x}}^i}
+
+
+
+\title{Referee Report - Advanced Industrial Organization II}
+\author{Jeanne Sorin}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\subsection*{Measuring Market Power in the Ready-to-Eat Cereal Industry \\ A.Nevo (2001, Econometrica)}
+
+\subsubsection*{Summary} % (fold)
+\label{sub:summary}
+
+This paper by Aviv Nevo proposes a strategy to disentangle whether an industry's high price-cost margins (PCM) come from (1) a firm's ability to differentiate its products from its competitors or (2) between each-other (multi-product firm effect), or from (3) collusion. 
+Its focus is on the ready-to-eat cereal industry.
+The identification strategy is in two steps.
+First, the paper estimates brand-level demand.
+Second, these estimates are combined with pricing rules from three different structural models to recover the implied corresponding PCMs. A comparison with the observed PCM allows the author to argue that the industry's large PCMs are mostly due to multi-product (within) firm effects.
+The data needed for such an exercise is a panel at the brand-city-quarter level: market shares and prices, characteristics, advertising and demographics.
+
+Demand for product characteristics is estimated using a discrete-choice model, where individuals choose to consume the one product that gives them the maximum net indirect utility. This allows Nevo to recover each brand's market share $s_{jt}(x, p_t, \delta_t, \theta_2)$. In order to instrument for endogenous prices, Nevo decomposes prices into mean of marginal costs and market, and the corresponding standard deviations. The standard-deviation (city-specific) are instrumented by other cities' prices.
+Nevo uses a modified version of the GMM algorithm from BLP. Unobserved brand characteristics are captured by brand dummy variables.
+
+As mentioned above, these estimates are combined with three different models of supply conduct. In these models, brand-level demand is a function of the brand's characteristics and consumer preferences. In structure nb 1, single-brand firms imply that PCM only comes from product differentiation. In structure nb 2, the presence multi-brand firms means that PCM comes from both product differentiation and portfolio effect. In structure nb 3, firms are allowed to collude under a perfect-price collusion structure.
+The market structure is one of monopolistic competition with firms pricing according to a pure-strategy Bertrand-Nash equilibrium.
+
+
+
+\subsubsection*{Criticisms \& Questions} % (fold)
+\label{sub:criticisms_&_questions}
+
+
+When presenting the results its full demand model (Table VI), Nevo highlights that the estimates of the standard deviations being non-significant, it is likely that the heterogeneity in the coefficients is mostly explained by the included demographics. Does this statement take a stand on the causal (micro) mechanism? This is an information I would have found interesting to feed the literature on the drivers of demand for specific products, whether demand is generally predicted by obervables etc.
+%
+Moreover, I would have appreciated a little more background on the details of the derivations of the PCM for the three different models.
+%
+Besides, it is unclear to me at that stage whether the role of advertising by the supply side of the market in driving demand for different types of product is captured by the IV strategy. %More generally, the instruments chosen seem very much imperfect, to the extent that a reader not so familiar with IO would likely question whether or not it is problematic for further estimation of the model.
+%
+Finally, I found the discussion on the restrictions on price elasticity resulting from using the multinomial Logit model to estimate demand (by assuming that consumer heterogeneity only enters the model through T1EV $\epsilon_{ijt}$) very clear. More specifically, it highlighted that one can only use correctly this specification when looking at a market where products are (perfect?) substitutes.
+
+\end{document}
