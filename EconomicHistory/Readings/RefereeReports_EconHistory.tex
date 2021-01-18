@@ -96,34 +96,69 @@
 \begin{document}
 \maketitle
 
+\newpage
+
 \subsection*{The Colonial Origins of Comparative Development : An Empirical Investigation \\ Daron Acemoglu, Simon Johnson, James A. Robinson (2001 AER)} % (fold)
-\label{subsec:the_colonial_origins_of_comparative_development_an_empirical_investigation_\_daron_acemoglu_simon_johnson_james_a_robinson_}
+
 
 \subsubsection*{The paper} % (fold)
 \label{ssub:the_paper}
 
 The authors study the role of institutions in economic development. However, because of an endogeneity issue (reverse causality) the causal relationship cannot be studied without an instrument. The authors use differences in European mortality rates as an instrument for current institutions. They find large effects of institutions on income per capita.
 
+While there is an obvious correlation between better institutions and economic development, it doesn't necessarily means that institutions cause economic development. Alternatively, it could be that richer nations choose / can afford better institutions (selection bias / reverse causality), or that there is an omitted factor driving both institutions and economic development (OVB).
+
+Using the mortality of early settlers as an instrument, they show that institutions have a positive effect on economic performance. Once one controls for this effect, \textit{``neither geography nor  the dummy for Africa is significant''}, suggesting that geography doesn't matter per se.
+\\
+The exclusion restriction: if settler mortality affects current income per capita in other ways than through institutions.
 
 
-\subsubsection*{The Comment by D. Albouy} % (fold)
-\label{ssub:the_comment_by_d_albouy}
 
+\subsubsection*{The Comment by D. Albouy (2012 AER)} % (fold)
 
+D. Albouy highlights that
+\begin{itemize}
+	\item \textit{``the historican sources containing information on mortality rates during colonial times are thin, which makes constructing a series of potential European settler mortality rates challenging. [...] There are several reasons to doubt the reliability and comparability of their European settler mortality rates and the conclusions that depend on them.''}
+	\item Out of 64 countries, only 28 have mortality rates that originate from within their own borders
+	\item Mortality rates never come from actual European settlers, but rather soldiers, priests...
+	\item The resulting IV's Wald 95\% confidence region or AR 95\% confidence region does not allow to reject the null.
+\end{itemize}
 
 \subsubsection*{The Response by Acemoglu, Johnson and Robinson} % (fold)
-\label{ssub:the_response_by_acemoglu_johnson_and_robinson}
 
+AJR acknowledges
+\begin{itemize}
+	\item Concerns about high mortality outliers, potentially affecting the relationship
+\end{itemize}
+AJR rejects
+\begin{itemize}
+	\item the Latin American and some of African data is unreliable. Albouy just discards the data, reducing the sample size to 28, ignoring, according to AJR, reliable data. They argue that the results only fade (as in Albouy) if one throws away 60\% of the sample
+	\item that the data is not consistent because some are taken from military campaigns. Albouy introduces a campaign dummy in the first stage regressions. However AJR argues that one cannot distinguish campaign vs not campaign. Also, argues that Albouy makes error in his coding.
+\end{itemize}
 
-\subsubsection*{The comment by Sachs} % (fold)
-\label{ssub:the_comment_by_sachs}
+\subsubsection*{The comment by McArthur and Sachs (NBER 2001)} % (fold)
 
-% subsubsection the_comment_by_sachs (end)
-% subsubsection the_response_by_acemoglu_johnson_and_robinson (end)
+On the other side of the criticism, MS expands the sample of countries analyzed and show that while institutions matter, geographically-related variables do too. Arguably, the absence of effect of geographical factors once controlling for institutions in AJR is due to their small sample size.
 
-% subsubsection the_comment_by_d_albouy (end)
-% subsubsection the_paper (end)
+\newpage
 
-% section the_colonial_origins_of_comparative_development_an_empirical_investigation_\_daron_acemoglu_simon_johnson_james_a_robinson_ (end)
+\subsection*{The Long-Term Effects of Africa's Slave Trades \\
+Nathan Nunn (2008 QJE)} % (fold)
+
+Nunn argues that Africa's current underdevelopment can be explained by its slave trades. To do so he does the following
+\begin{enumerate}
+	\item Construct Estimates of the Number of slaves exported from each country between 1400 and 1900
+	\item Show there is a negative correlation between number of slaves and economic development
+	\item Investigates causal mechanisms
+	\begin{itemize}
+		\item Evidence from African historians on the nature of selection into the slave trades
+		\item Evidence on pre-trade pop density
+		\item Instruments for slaves trade : sailing distances from each country to the nearest location of demand for slave labor in each of the four slave trades. The instrument is valid if although the location of demand influenced the location of supply, the location of supply did not influence the location of demand.
+		\item Historical evidence: whether the procurement of slaves through internal warfare, raiding and kidnapping resulted in subsequent state collapse and ethnic fractionalization.
+	\end{itemize}
+\end{enumerate}
+Quote: ``\textit{An important consequence of the slave trades was that they tended to weaken ties between villages, thus discouraging the formation of larger communities and broader ethnic identities. I explore whether the data are consistent with this channel by examining the relationship between slave exports and a measure of current ethnic fractionalization from Alesina et al. (2003)}''
+
+% subsection the_long_term_effects_of_africa_s_slave_trades_\_nathan_nunn_ (end)
 
 \end{document}
